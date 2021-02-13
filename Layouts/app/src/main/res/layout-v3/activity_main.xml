@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    tools:ignore="UnknownId">
+
+    <RelativeLayout
+        android:id="@+id/llExpresso"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:background="@color/orange"
+        tools:ignore="ExtraText">
+
+        <ImageView
+            android:id="@+id/imgMenu"
+            android:layout_width="40dp"
+            android:layout_height="wrap_content"
+
+            android:layout_alignParentStart="true"
+            android:background="@color/orange"
+            android:src="@drawable/menu"
+            tools:ignore="ContentDescription" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_toEndOf="@id/imgMenu" />
+            android:fontFamily="@font/cooper"
+            android:text="Expresso"
+            android:textColor="@color/white"
+            android:textSize="25sp"
+            tools:ignore="HardcodedText" />
+
+    </RelativeLayout>
+
+    <ImageView
+        android:id="@+id/imgCamera"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:layout_below="@id/llExpresso"
+        android:layout_marginBottom="16dp"
+        android:background="#FFF"
+        android:padding="10dp"
+        android:src="@drawable/camera"
+        tools:ignore="ContentDescription,Suspicious0dp" />
+
+    <TextView
+        android:id="@+id/txtCreateAccount"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/imgCamera"
+        android:layout_marginBottom="16dp"
+        android:gravity="center"
+        android:text="Create an account"
+        android:textColor="#808080"
+        android:textSize="32sp"
+        tools:ignore="HardcodedText" />
+
+    <EditText
+        android:id="@+id/txtEmail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/txtCreateAccount"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="16dp"
+        android:autofillHints=""
+        android:hint="Email Address"
+        android:inputType="text"
+
+        android:textSize="20sp"
+        tools:ignore="HardcodedText,LabelFor,TextFields" />
+
+    <EditText
+        android:id="@+id/txtPassword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/txtEmail"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="16dp"
+        android:autofillHints=""
+        android:hint="Password"
+        android:inputType="text"
+        android:password="true"
+        android:textColor="#000"
+        android:textColorHint="@color/black"
+        android:textSize="20sp"
+        tools:ignore="HardcodedText,LabelFor,TextFields" />
+
+    <EditText
+        android:id="@+id/txtConfirmPassword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/txtPassword"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="16dp"
+        android:autofillHints=""
+        android:hint="Confirm Password"
+        android:inputType="text"
+        android:password="true"
+        android:textColor="#000"
+        android:textColorHint="@color/black"
+        android:textSize="20sp"
+        tools:ignore="HardcodedText,LabelFor,TextFields" />
+
+    <LinearLayout
+        android:id="@+id/llNames"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/txtConfirmPassword"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="16dp">
+
+        <EditText
+            android:id="@+id/txtFirstName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:autofillHints=""
+            android:hint="First Name"
+            android:inputType="text"
+            android:textColor="#000"
+            android:textColorHint="@color/black"
+            android:textSize="20sp"
+            tools:ignore="HardcodedText,LabelFor,TextFields" />
+
+        <EditText
+            android:id="@+id/txtLastName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:autofillHints=""
+            android:hint="Last Name"
+            android:inputType="text"
+            android:textColor="#000"
+            android:textColorHint="@color/black"
+            android:textSize="20sp"
+            tools:ignore="HardcodedText,LabelFor,TextFields" />
+    </LinearLayout>
+
+    <EditText
+        android:id="@+id/txtAge"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/llNames"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:autofillHints=""
+        android:hint="Age"
+        android:inputType="number"
+        android:textColor="#000"
+        android:textColorHint="@color/black"
+        android:textSize="20sp"
+        tools:ignore="HardcodedText,LabelFor,TextFields" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/txtAge"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="24dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginBottom="16dp"
+        android:background="#F46F17"
+        android:clickable="true"
+        android:focusable="true"
+        android:gravity="center"
+        android:padding="16dp"
+        android:shadowColor="@color/teal_700"
+        android:text="SIGN UP"
+        android:textColor="#FFF"
+        android:textColorLink="@color/black"
+        android:textSize="32sp"
+        tools:ignore="HardcodedText" />
+
+
+</RelativeLayout>
