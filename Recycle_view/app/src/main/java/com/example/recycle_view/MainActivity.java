@@ -1,6 +1,7 @@
 package com.example.recycle_view;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
@@ -35,6 +36,8 @@ public class MainActivity extends AppCompatActivity {
         RecyclerView recyclerView = findViewById(R.id.recTodo);
 
         TaskAdapter taskAdapter = new TaskAdapter(tasks);
+
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
         recyclerView.setAdapter(taskAdapter);
 

@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">Recycle_view</string>
     <string name="task_title_1">Task Title #1</string>
+    <string name="done">DONE</string>
 </resources>

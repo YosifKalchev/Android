@@ -3,8 +3,8 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/ykalc/AndroidStudioProjects/Android/Recycle_view/app/src/main/res/drawable/background_border.xml" value="0.2546875" />
-        <entry key="..\:/Users/ykalc/AndroidStudioProjects/Android/Recycle_view/app/src/main/res/layout/activity_main.xml" value="0.23854166666666668" />
+        <entry key="..\:/Users/ykalc/AndroidStudioProjects/Android/Recycle_view/app/src/main/res/drawable/background_border.xml" value="0.8" />
+        <entry key="..\:/Users/ykalc/AndroidStudioProjects/Android/Recycle_view/app/src/main/res/layout/activity_main.xml" value="0.8" />
         <entry key="..\:/Users/ykalc/AndroidStudioProjects/Android/Recycle_view/app/src/main/res/layout/spiner_item.xml" value="0.23854166666666668" />
         <entry key="..\:/Users/ykalc/AndroidStudioProjects/Android/Recycle_view/app/src/main/res/layout/task_item.xml" value="0.4" />
       </map>
