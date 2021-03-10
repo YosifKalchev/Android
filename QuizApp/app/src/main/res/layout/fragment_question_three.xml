@@ -14,7 +14,7 @@
         android:textColor="@color/black"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Question 3"
+        android:text="(3) Question with EditText Field and answer transfer"
         />
 
 

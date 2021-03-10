@@ -3,98 +3,88 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/startFragment">
+    app:startDestination="@id/splashScreenFragment"
+    >
 
 
-<!--    <fragment-->
-<!--        android:id="@+id/startFragment"-->
-<!--        android:name="com.example.quizapp.StartFragment"-->
-<!--        android:label="fragment_start"-->
-<!--        tools:layout="@layout/fragment_start" >-->
-<!--        <action-->
-<!--            android:id="@+id/action_startFragment_to_question1"-->
-<!--            app:destination="@id/question1_fragment" />-->
-<!--        <action-->
-<!--            android:id="@+id/action_startFragment_to_question2"-->
-<!--            app:destination="@id/question2_fragment" />-->
-<!--        <action-->
-<!--            android:id="@+id/action_startFragment_to_question3"-->
-<!--            app:destination="@id/question3" />-->
-<!--    </fragment>-->
-<!--    <fragment-->
-<!--        android:id="@+id/question1_fragment"-->
-<!--        android:name="com.example.quizapp.Question1"-->
-<!--        android:label="fragment_question1"-->
-<!--        tools:layout="@layout/fragment_question1" >-->
-<!--        <action-->
-<!--            android:id="@+id/action_question1_to_question2"-->
-<!--            app:destination="@id/question2_fragment" />-->
-<!--    </fragment>-->
-<!--    <fragment-->
-<!--        android:id="@+id/question2_fragment"-->
-<!--        android:name="com.example.quizapp.Question2"-->
-<!--        android:label="fragment_question2"-->
-<!--        tools:layout="@layout/fragment_question2" >-->
-<!--        <action-->
-<!--            android:id="@+id/action_question2_to_question3"-->
-<!--            app:destination="@id/question3" />-->
-<!--    </fragment>-->
-<!--    <fragment-->
-<!--        android:id="@+id/question3"-->
-<!--        android:name="com.example.quizapp.Question3"-->
-<!--        android:label="fragment_question3"-->
-<!--        tools:layout="@layout/fragment_question3" >-->
-<!--        <action-->
-<!--            android:id="@+id/action_question3_to_question4"-->
-<!--            app:destination="@id/question4" />-->
-<!--    </fragment>-->
-<!--    <fragment-->
-<!--        android:id="@+id/question4"-->
-<!--        android:name="com.example.quizapp.Question4"-->
-<!--        android:label="fragment_question4"-->
-<!--        tools:layout="@layout/fragment_question4" >-->
-<!--        <action-->
-<!--            android:id="@+id/action_question4_to_question5"-->
-<!--            app:destination="@id/question5" />-->
-<!--    </fragment>-->
-<!--    <fragment-->
-<!--        android:id="@+id/question5"-->
-<!--        android:name="com.example.quizapp.Question5"-->
-<!--        android:label="fragment_question5"-->
-<!--        tools:layout="@layout/fragment_question5" >-->
-<!--        <action-->
-<!--            android:id="@+id/action_question5_to_resultFragment"-->
-<!--            app:destination="@id/resultFragment" />-->
-<!--    </fragment>-->
-<!--    <fragment-->
-<!--        android:id="@+id/resultFragment"-->
-<!--        android:name="com.example.quizapp.ResultFragment"-->
-<!--        android:label="fragment_result"-->
-<!--        tools:layout="@layout/fragment_result" />-->
     <fragment
         android:id="@+id/startFragment"
         android:name="com.example.quizapp.StartFragment"
         android:label="fragment_start"
         tools:layout="@layout/fragment_start" >
         <action
-            android:id="@+id/action_startFragment_to_questionTwoFragment"
-            app:destination="@id/questionTwoFragment" />
-        <action
-            android:id="@+id/action_startFragment_to_questionThreeFragment"
-            app:destination="@id/questionThreeFragment" />
+            android:id="@+id/action_startFragment_to_questionOneFragment"
+            app:destination="@id/questionOneFragment" />
     </fragment>
+
+    <fragment
+        android:id="@+id/questionOneFragment"
+        android:name="com.example.quizapp.QuestionOneFragment"
+        android:label="QuestionOneFragment"
+        tools:layout="@layout/fragment_question_one">
+        <action
+            android:id="@+id/action_questionOneFragment_to_questionTwoFragment"
+            app:destination="@id/questionTwoFragment" />
+    </fragment>
+
     <fragment
         android:id="@+id/questionTwoFragment"
         android:name="com.example.quizapp.QuestionTwoFragment"
-        android:label="fragment_question_two"
-        tools:layout="@layout/fragment_question_two" >
+        android:label="QuestionOneFragment"
+        tools:layout="@layout/fragment_question_two">
         <action
             android:id="@+id/action_questionTwoFragment_to_questionThreeFragment"
             app:destination="@id/questionThreeFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/questionFourFragment"
+        android:name="com.example.quizapp.QuestionFourFragment"
+        android:label="QuestionFourFragment"
+        tools:layout="@layout/fragment_question_four">
+        <action
+            android:id="@+id/action_questionFourFragment_to_questionFiveFragment"
+            app:destination="@id/questionFiveFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/questionFiveFragment"
+        android:name="com.example.quizapp.QuestionFiveFragment"
+        android:label="QuestionFiveFragment"
+        tools:layout="@layout/fragment_question_five">
+        <action
+            android:id="@+id/action_questionFiveFragment_to_questionSixFragment"
+            app:destination="@id/questionSixFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/questionSixFragment"
+        android:name="com.example.quizapp.QuestionSixFragment"
+        android:label="QuestionSixFragment"
+        tools:layout="@layout/fragment_question_six">
+        <action
+            android:id="@+id/action_questionSixFragment_to_resultFragment"
+            app:destination="@id/resultFragment" />
     </fragment>
     <fragment
         android:id="@+id/questionThreeFragment"
         android:name="com.example.quizapp.QuestionThreeFragment"
         android:label="QuestionThreeFragment"
-        tools:layout="@layout/fragment_question_three"/>
+        tools:layout="@layout/fragment_question_three">
+        <action
+            android:id="@+id/action_questionThreeFragment_to_questionFourFragment"
+            app:destination="@id/questionFourFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/splashScreenFragment"
+        android:name="com.example.quizapp.SplashScreenFragment"
+        android:label="SplashScreenFragment"
+        tools:layout="@layout/fragment_splash_screen">
+        <action
+            android:id="@+id/action_splashScreenFragment_to_startFragment"
+            app:destination="@id/startFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/resultFragment"
+        android:name="com.example.quizapp.ResultFragment"
+        android:label="fragment_result"
+        tools:layout="@layout/fragment_result" />
 </navigation>
