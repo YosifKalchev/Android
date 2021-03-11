@@ -15,7 +15,7 @@ public class MainActivity extends AppCompatActivity {
 //    public int getCorrectAnswersCount() {
 //        return correctAnswersCount;
 //    }
-    
+
     //todo delete the commenter rows above is unnecessary
     //todo delete all test textViews inside fragments from 2 to 6
     //try to simplify and clean the code!!!

@@ -43,7 +43,7 @@ public class QuestionFiveFragment extends NavigatorFragment {
         AtomicInteger totalAnswers = new AtomicInteger(getArguments().getInt("total answers"));
 
         int direction = R.id.action_questionFiveFragment_to_questionSixFragment;
-        Button btnConfirm = (Button) view.findViewById(R.id.btnConfirmAnswer6);
+        Button btnConfirm = (Button) view.findViewById(R.id.btnConfirmAnswer5);
 
         RadioGroup radioGroup = view.findViewById(R.id.radioGroup);
 
@@ -55,22 +55,20 @@ public class QuestionFiveFragment extends NavigatorFragment {
 
         btnConfirm.setOnClickListener(v -> {
 
+            RadioButton correctAnswer = v.findViewById(R.id.radioButton1);
 
             if (radioGroup.getCheckedRadioButtonId() != -1)
             {
-//                RadioButton checkedRadioButton = view.findViewById(radioGroup.getCheckedRadioButtonId());
-//                RadioButton correctAnswer = v.findViewById(R.id.radioButton1);
-//                String checkedButtonText = checkedRadioButton.getText().toString();
-//                String correctButtonText = correctAnswer.getText().toString();
+                if (correctAnswer.isChecked()) {
 
-//
-//                if (correctAnswer.isChecked()) {
-                //todo execute this method only if the correct answer is selected
                     onCorrectAnswerInserted(v, correctAnswers, totalAnswers, direction, bundle);
-//                }
-//                else {
-//                    onWrongAnswerInserted(v, correctAnswers, totalAnswers, direction, bundle);
-//                }
+                //todo execute this method only if the correct answer is selected
+                    //todo the current check causes the app to crash!
+
+                }
+                else {
+                    onWrongAnswerInserted(v, correctAnswers, totalAnswers, direction, bundle);
+                }
 
             } else {
                 Toast.makeText(v.getContext(), "Choose an option", Toast.LENGTH_SHORT).show();

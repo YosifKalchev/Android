@@ -44,7 +44,7 @@ public class QuestionSixFragment extends NavigatorFragment {
 
 
         int direction = R.id.action_questionSixFragment_to_resultFragment;
-        Button btnConfirm = (Button) view.findViewById(R.id.btnConfirmAnswer6);
+        Button btnConfirm = (Button) view.findViewById(R.id.btnConfirmAnswer5);
 
         CheckBox checkBox1 = view.findViewById(R.id.checkBox1);
         CheckBox checkBox2 = view.findViewById(R.id.checkBox2);
