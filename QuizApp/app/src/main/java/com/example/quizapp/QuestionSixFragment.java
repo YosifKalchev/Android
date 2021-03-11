@@ -12,8 +12,8 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.navigation.Navigation;
 
+import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicInteger;
 
 public class QuestionSixFragment extends NavigatorFragment {
@@ -37,14 +37,8 @@ public class QuestionSixFragment extends NavigatorFragment {
         AtomicInteger correctAnswers = new AtomicInteger(getArguments().getInt("correct answers"));
         AtomicInteger totalAnswers = new AtomicInteger(getArguments().getInt("total answers"));
 
-//        //this is a test code
-        TextView test = view.findViewById(R.id.txtTest6);
-        test.setText((correctAnswers.get() - 1) + " | " + (totalAnswers.get() - 1) + "" );
-
-
-
         int direction = R.id.action_questionSixFragment_to_resultFragment;
-        Button btnConfirm = (Button) view.findViewById(R.id.btnConfirmAnswer5);
+        Button btnConfirm = view.findViewById(R.id.btnConfirmAnswer6);
 
         CheckBox checkBox1 = view.findViewById(R.id.checkBox1);
         CheckBox checkBox2 = view.findViewById(R.id.checkBox2);
@@ -55,63 +49,57 @@ public class QuestionSixFragment extends NavigatorFragment {
         CheckBox checkBox7 = view.findViewById(R.id.checkBox7);
         CheckBox checkBox8 = view.findViewById(R.id.checkBox8);
 
-        CheckBox[] checkBoxes = new CheckBox[] {
-            checkBox1, checkBox3, checkBox4, checkBox7,
+        CheckBox[] checkBoxes = new CheckBox[]{
+                checkBox1, checkBox3, checkBox4, checkBox7,
                 checkBox2, checkBox5, checkBox6, checkBox8
         };
 
-//        AtomicInteger numberOfBoxesChecked = new AtomicInteger();
+        checkIfCorrectAnswerIsSelected(checkBox1);
 
-        navigateToResultScreen(view, correctAnswers, totalAnswers, direction, btnConfirm, checkBoxes);
+        checkIfCorrectAnswerIsSelected(checkBox3);
 
+        checkIfCorrectAnswerIsSelected(checkBox4);
 
-    }
+        checkIfCorrectAnswerIsSelected(checkBox7);
 
-    private void navigateToResultScreen(View view, AtomicInteger correctAnswers,
-                                        AtomicInteger totalAnswers, int direction, Button btnConfirm,
-                                        CheckBox[] checkBoxes) {
         btnConfirm.setOnClickListener(v -> {
-            int answersGiven = findCountOfAnswersGiven(checkBoxes);
 
-            if (answersGiven == 0) {
-                Toast.makeText(v.getContext(), "You haven't select and answer!", Toast.LENGTH_SHORT).show();
-                navigateToResultScreen(view, correctAnswers,
-                         totalAnswers, direction, btnConfirm,
-                        checkBoxes);
+            int checkedBoxesCount = 0;
+            int checkedCorrectAnswersCount = 0;
+
+            for (CheckBox box : checkBoxes)
+                if (box.isChecked()) {
+                    checkedBoxesCount++;
+                }
+
+            if (checkedBoxesCount == 0) {
+                Toast.makeText(v.getContext(), "You have not chosen answers", Toast.LENGTH_SHORT).show();
             } else {
-                if (answersGiven > 4) {
-                    Toast.makeText(v.getContext(), "You have selected too many answers!", Toast.LENGTH_SHORT).show();
-                    navigateToResultScreen(view, correctAnswers,
-                            totalAnswers, direction, btnConfirm,
-                            checkBoxes);
+                if (checkedBoxesCount > 4) {
+                    Toast.makeText(v.getContext(), "You have selected too many answers", Toast.LENGTH_SHORT).show();
                 } else {
-                    for (int i = 0; i < checkBoxes.length -1 ; i++) {
-                        if (checkBoxes[i].isChecked()) {
-                            correctAnswers.getAndIncrement();
-                        }
-                    }
+                    CheckBox[] checkedCorrectBoxes = new CheckBox[] {
+                            checkBox1, checkBox3, checkBox4, checkBox7
+                    };
 
-                    for (CheckBox checkbox : checkBoxes) {
-                        if (checkbox.isChecked()) {
-                            totalAnswers.getAndIncrement();
+                    for (CheckBox box : checkedCorrectBoxes) {
+                        if (box.isChecked()) {
+                            checkedCorrectAnswersCount++;
                         }
                     }
-                    bundle.putInt("correct answers", correctAnswers.get());
-                    bundle.putInt("total answers", totalAnswers.get());
-                    Navigation.findNavController(view).navigate(direction, bundle);
+                    onCorrectAnswerSelected(v, checkedCorrectAnswersCount, checkedBoxesCount,
+                            correctAnswers, totalAnswers, direction, bundle);
                 }
             }
-
         });
+
     }
 
-    private int findCountOfAnswersGiven(CheckBox[] checkBoxes) {
-        int result = 0;
-        for (CheckBox checkbox : checkBoxes) {
-            if (checkbox.isChecked()) {
-                result++;
-            }
-        } return result;
+
+    private void checkIfCorrectAnswerIsSelected(CheckBox checkBox1) {
+        AtomicBoolean isCorrAnswerOneChecked = new AtomicBoolean(false);
+
+        checkBox1.setOnClickListener(v -> isCorrAnswerOneChecked.set(checkBox1.isChecked()));
     }
 
 

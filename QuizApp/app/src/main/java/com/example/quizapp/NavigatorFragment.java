@@ -54,5 +54,14 @@ public class NavigatorFragment extends Fragment {
         Navigation.findNavController(view).navigate(direction, bundle);
     }
 
+    public static void onCorrectAnswerSelected(
+            View view, int numberOfCorrectAnswersGiven, int numberOfTotalAnswersGiven,
+            AtomicInteger correctAnswers, AtomicInteger totalAnswers, int direction, Bundle bundle) {
 
+        totalAnswers.getAndAdd(numberOfTotalAnswersGiven - 1);
+        correctAnswers.getAndAdd(numberOfCorrectAnswersGiven - 1);
+        bundle.putInt("correct answers", correctAnswers.get());
+        bundle.putInt("total answers", totalAnswers.get());
+        Navigation.findNavController(view).navigate(direction, bundle);
+    }
 }

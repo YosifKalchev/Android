@@ -9,11 +9,11 @@ import android.widget.Button;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
+import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicInteger;
 
 public class QuestionFiveFragment extends NavigatorFragment {
@@ -43,36 +43,22 @@ public class QuestionFiveFragment extends NavigatorFragment {
         AtomicInteger totalAnswers = new AtomicInteger(getArguments().getInt("total answers"));
 
         int direction = R.id.action_questionFiveFragment_to_questionSixFragment;
-        Button btnConfirm = (Button) view.findViewById(R.id.btnConfirmAnswer5);
+        Button btnConfirm = view.findViewById(R.id.btnConfirmAnswer5);
 
-        RadioGroup radioGroup = view.findViewById(R.id.radioGroup);
+        RadioButton btnCorrectAnswer = view.findViewById(R.id.radioButton1);
+        AtomicBoolean isCorrectAnswerGiven = new AtomicBoolean(false);
 
-
-        //this is a test code
-        TextView test = view.findViewById(R.id.txtTest5);
-        test.setText((correctAnswers.get() - 1) + " | " + (totalAnswers.get() - 1) + "" );
-
+        btnCorrectAnswer.setOnClickListener(v -> {
+            isCorrectAnswerGiven.set(btnCorrectAnswer.isChecked());
+        });
 
         btnConfirm.setOnClickListener(v -> {
-
-            RadioButton correctAnswer = v.findViewById(R.id.radioButton1);
-
-            if (radioGroup.getCheckedRadioButtonId() != -1)
-            {
-                if (correctAnswer.isChecked()) {
-
-                    onCorrectAnswerInserted(v, correctAnswers, totalAnswers, direction, bundle);
-                //todo execute this method only if the correct answer is selected
-                    //todo the current check causes the app to crash!
-
-                }
-                else {
-                    onWrongAnswerInserted(v, correctAnswers, totalAnswers, direction, bundle);
-                }
-
+            if (isCorrectAnswerGiven.get()) {
+                onCorrectAnswerInserted(v, correctAnswers, totalAnswers, direction, bundle);
             } else {
-                Toast.makeText(v.getContext(), "Choose an option", Toast.LENGTH_SHORT).show();
+                onWrongAnswerInserted(v, correctAnswers, totalAnswers, direction, bundle);
             }
         });
+
     }
 }

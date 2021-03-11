@@ -56,16 +56,12 @@ public class QuestionThreeFragment extends NavigatorFragment {
         AtomicInteger totalAnswers = new AtomicInteger(getArguments().getInt("total answers"));
 
         int direction = R.id.action_questionThreeFragment_to_questionFourFragment;
-        Button btnConfirm = (Button) view.findViewById(R.id.btnConfirmAnswer3);
+        Button btnConfirm = view.findViewById(R.id.btnConfirmAnswer3);
 
-        //this is a test code
-        TextView test = view.findViewById(R.id.txtTest3);
-        test.setText((correctAnswers.get() - 1) + " | " + (totalAnswers.get() - 1) + "" );
 
-//CorrectAnswers.ANSWER_QUESTION_THREE.toString())
         btnConfirm.setOnClickListener(v -> {
 
-            EditText editText = (EditText) view.findViewById(R.id.edtAnswer3);
+            EditText editText = view.findViewById(R.id.edtAnswer3);
             String answer = editText.getText().toString().toUpperCase();
 
             if (answer.equals("Q")) {

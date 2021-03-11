@@ -49,11 +49,6 @@ public class QuestionTwoFragment extends NavigatorFragment {
         View btnIncorrect = view.findViewById(R.id.btnFalse2);
         int direction = R.id.action_questionTwoFragment_to_questionThreeFragment;
 
-        //this is a test code
-        TextView test = view.findViewById(R.id.txtTest2);
-        test.setText((correctAnswers.get() - 1) + " | " + (totalAnswers.get() - 1) + "" );
-
-
         onCorrectAnswerClicked(btnCorrect, correctAnswers, totalAnswers, direction, bundle);
 
         onWrongAnswerClicked(btnIncorrect, correctAnswers, totalAnswers, direction, bundle);

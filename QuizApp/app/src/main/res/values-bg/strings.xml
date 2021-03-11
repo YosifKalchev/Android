@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Викторина</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="splash_screen_image">Splash screen image</string>
+    <string name="advanced_iquiz_game">В И К Т О Р И Н А</string>
+    <string name="start_the_quiz">Начало</string>
+    <string name="credit">Друго</string>
+    <string name="txt_true">Вярно</string>
+    <string name="txt_false">Грешно</string>
+    <string name="sneeze_question">Можеш да кихнеш докато спиш</string>
+    <string name="question3">Коя буква в английската азбука е най- ценна в играта скрабъл, заедно със Z ?</string>
+    <string name="enter_your_answer_here">Въведете отговор</string>
+    <string name="confirm">Потвърди</string>
+    <string name="question2">Местното население на Карибите нарича това животно планинско пиле?</string>
+    <string name="question4">През коя година Хенри Трети въвежда данък "брада"?</string>
+    <string name="question5">Ако в Уелингтън, Нова Зеландия започнеш да копаеш дупка по права линия през центъра на земята, в коя държава ще излезеш отново на повъхността? </string>
+    <string name="spain">Испания</string>
+    <string name="russia">Русия</string>
+    <string name="usa">САЩ</string>
+    <string name="bolivia">Боливия</string>
+    <string name="question6">В кои държави все още се използва "шилинг" като разменна валута?</string>
+    <string name="kenya">Кения</string>
+    <string name="uganda">Уганда</string>
+    <string name="tanzania">Танзания</string>
+    <string name="england">Англия</string>
+    <string name="new_zealand">Нова Зеландия</string>
+    <string name="somalia">Сомалия</string>
+    <string name="india">Индия</string>
+    <string name="textview">Текст</string>
+</resources>

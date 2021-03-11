@@ -20,5 +20,13 @@
     <string name="usa">USA</string>
     <string name="bolivia">Bolivia</string>
     <string name="question6">Which countries still have the shilling as currency?</string>
+    <string name="kenya">Kenya</string>
+    <string name="uganda">Uganda</string>
+    <string name="tanzania">Tanzania</string>
+    <string name="england">England</string>
+    <string name="new_zealand">New Zealand</string>
+    <string name="somalia">Somalia</string>
+    <string name="india">India</string>
+    <string name="textview">TextView</string>
 
 </resources>

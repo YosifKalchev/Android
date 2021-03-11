@@ -30,19 +30,14 @@ public class QuestionFourFragment extends NavigatorFragment {
         AtomicInteger totalAnswers = new AtomicInteger(getArguments().getInt("total answers"));
 
         int direction = R.id.action_questionFourFragment_to_questionFiveFragment;
-        Button btnConfirm = (Button) view.findViewById(R.id.btnConfirmAnswer4);
-
-
-        //this is a test code
-        TextView test = view.findViewById(R.id.txtTest4);
-        test.setText((correctAnswers.get() - 1) + " | " + (totalAnswers.get() - 1) + "" );
+        Button btnConfirm = view.findViewById(R.id.btnConfirmAnswer4);
 
         btnConfirm.setOnClickListener(v -> {
 
-            EditText editText = (EditText) view.findViewById(R.id.edtAnswer4);
+            EditText editText = view.findViewById(R.id.edtAnswer4);
             String answer = editText.getText().toString().toUpperCase();
 
-            if (answer.equals("1234")) {
+            if (answer.equals("1535")) {
                 onCorrectAnswerInserted(v, correctAnswers, totalAnswers, direction, bundle);
             } else {
                 onWrongAnswerInserted(v, correctAnswers, totalAnswers, direction, bundle);
