@@ -9,4 +9,16 @@
     <string name="txt_true">True</string>
     <string name="txt_false">False</string>
     <string name="sneeze_question">You can sneeze in your sleep</string>
+    <string name="question3">Z and which other letter are worth the most in Scrabble?</string>
+    <string name="enter_your_answer_here">Enter your answer here</string>
+    <string name="confirm">confirm</string>
+    <string name="question2">Native to the Caribbean, is this animal called Mountain chicken?</string>
+    <string name="question4">In which year did Henry VIII introduced a beard tax?</string>
+    <string name="question5">If you dug a hole through the centre of the earth starting from Wellington in New Zealand, which European country would you end up in?</string>
+    <string name="spain">Spain</string>
+    <string name="russia">Russia</string>
+    <string name="usa">USA</string>
+    <string name="bolivia">Bolivia</string>
+    <string name="question6">Which countries still have the shilling as currency?</string>
+
 </resources>

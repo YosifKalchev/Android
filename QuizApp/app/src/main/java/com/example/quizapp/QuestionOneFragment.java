@@ -7,12 +7,11 @@ import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.fragment.app.Fragment;
 import androidx.navigation.Navigation;
 
 import java.util.concurrent.atomic.AtomicInteger;
 
-public class QuestionOneFragment extends Fragment {
+public class QuestionOneFragment extends NavigatorFragment {
 
     public QuestionOneFragment() {
     }
@@ -21,16 +20,22 @@ public class QuestionOneFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
+        View btnCorrect = view.findViewById(R.id.btnFalse);
+        View btnIncorrect = view.findViewById(R.id.btnTrue);
+        int direction = R.id.action_questionOneFragment_to_questionTwoFragment;
 
-        view.findViewById(R.id.btnTrue).setOnClickListener(this::advanceToNextQuestion);
-        view.findViewById(R.id.btnFalse).setOnClickListener(this::advanceToNextQuestion);
+        AtomicInteger correctAnswers = new AtomicInteger(1);
+        AtomicInteger totalAnswers = new AtomicInteger(1);
 
+
+        onCorrectAnswerClicked(btnCorrect, correctAnswers, totalAnswers, direction, bundle);
+
+        onWrongAnswerClicked(btnIncorrect, correctAnswers, totalAnswers, direction, bundle);
     }
 
 
-    private void advanceToNextQuestion(View view) {
-        Navigation.findNavController(view).navigate(R.id.action_questionOneFragment_to_questionTwoFragment);
-    }
+
+
 
     @Nullable
     @Override

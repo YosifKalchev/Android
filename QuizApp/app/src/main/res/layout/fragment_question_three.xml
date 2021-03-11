@@ -1,22 +1,68 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".QuestionTwoFragment"
-    android:background="#2234">
+    android:background="@color/base_background">
 
-    <!-- TODO: Update blank fragment layout -->
     <TextView
-        android:id="@+id/txtView3"
-        android:textSize="60sp"
-        android:background="@color/cardview_light_background"
-        android:textColor="@color/black"
-        android:layout_width="match_parent"
+        android:id="@+id/txtTest3"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="(3) Question with EditText Field and answer transfer"
-        />
+        android:layout_marginStart="1dp"
+        android:layout_marginTop="1dp"
+        android:text="TextView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="340dp"
+        android:layout_height="61dp"
+        android:layout_marginTop="160dp"
+        android:layout_marginBottom="524dp"
+        android:background="#e8ca93"
+        android:padding="8dp"
+        android:text="@string/question3"
+        android:textAlignment="center"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/edtAnswer3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="195dp"
+        android:layout_marginTop="64dp"
+        android:layout_marginEnd="196dp"
+        android:layout_marginBottom="416dp"
+        android:autofillHints="@string/enter_your_answer_here"
+        android:hint="@string/enter_your_answer_here"
+        android:inputType="text"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView3" />
+
+    <Button
+        android:id="@+id/btnConfirmAnswer3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="161dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="160dp"
+        android:layout_marginBottom="320dp"
+        android:text="@string/confirm"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edtAnswer3"/>
 
 
-
-</LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
