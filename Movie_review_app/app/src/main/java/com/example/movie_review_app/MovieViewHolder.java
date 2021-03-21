@@ -29,7 +29,7 @@ public class MovieViewHolder extends RecyclerView.ViewHolder {
     @SuppressLint("SetTextI18n")
     public void createSingleRow(Movie movie, int position) {
 
-        txtTitle.setText(movie.getName());
+        txtTitle.setText(movie.getName() + movie.getId());
         txtGrade.setText(movie.getGrade().toString());
 
 

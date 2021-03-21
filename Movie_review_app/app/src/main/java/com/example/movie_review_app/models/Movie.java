@@ -8,12 +8,13 @@ import java.util.List;
 
 public class Movie {
 
-    private String name;
-    private int id;
-    private int yearOfPublish;
-    private Review review;
-    private Grade grade;
-    private Crew crew;
+    private static int counter = 1;
+    private final String name;
+    private final int id;
+    private final int yearOfPublish;
+    private final Review review;
+    private final Grade grade;
+    private final Crew crew;
 
     public String getName() {
         return name;
@@ -41,7 +42,6 @@ public class Movie {
 
     public Movie(String name, int yearOfPublish, Review review, Grade grade, Crew crew) {
         this.name = name;
-        int counter = 1;
         this.id = counter;
         this.yearOfPublish = yearOfPublish;
         this.review = review;
