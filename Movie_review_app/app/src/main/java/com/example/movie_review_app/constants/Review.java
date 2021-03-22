@@ -56,6 +56,6 @@ public enum Review {
 
     @Override
     public String toString() {
-        return "\n" + value;
+        return ""+value;
     }
 }

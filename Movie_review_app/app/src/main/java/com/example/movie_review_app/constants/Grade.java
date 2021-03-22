@@ -13,7 +13,7 @@ public enum Grade {
     SUPERIOR (9),
     OUTSTANDING (10);
 
-    private int value;
+    private final int value;
 
     Grade(int value) {
         this.value = value;
@@ -22,8 +22,6 @@ public enum Grade {
     @Override
     public String toString() {
 
-        if (value == 10) {
-            return ""+value;
-        } else return "  "+value;
+         return ""+value;
     }
 }

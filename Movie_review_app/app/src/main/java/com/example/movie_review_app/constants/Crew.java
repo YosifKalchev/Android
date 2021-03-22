@@ -25,4 +25,13 @@ public enum Crew {
     }
 
     private final String[] actors;
+
+    @Override
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+        for (String actor : actors) {
+             result.append(actor).append("\n");
+        }
+        return result.toString();
+    }
 }

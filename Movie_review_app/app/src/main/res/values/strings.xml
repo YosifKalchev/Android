@@ -1,4 +1,8 @@
 <resources>
-    <string name="app_name">Movie_review_app</string>
+    <string name="app_name">Yosif Movie</string>
     <string name="todo">TODO</string>
+    <string name="crew">Crew</string>
+    <string name="review">Review</string>
+    <string name="publish">Publish</string>
+    <string name="home">Home</string>
 </resources>

@@ -34,6 +34,7 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieViewHolder> {
     public void onBindViewHolder(@NonNull MovieViewHolder holder, int position) {
             Movie movie = data.get(position);
             holder.createSingleRow(movie, position);
+            holder.transferData(data);
     }
 
     @Override

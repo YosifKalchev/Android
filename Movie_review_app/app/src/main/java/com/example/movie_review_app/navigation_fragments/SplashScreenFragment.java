@@ -37,12 +37,10 @@ public class SplashScreenFragment extends Fragment {
         Handler handler = new Handler();
         handler.postDelayed(() -> Navigation
                 .findNavController(view)
-                .navigate(R.id.action_splashScreenFragment_to_startFragment), 5000);
+                .navigate(R.id.action_splashScreenFragment_to_startFragment), 500);
 
     }
 }
 
-//TODO: 21.3.2021 г. Set up bottom navigation and use it to switch between cast and plot overview
-//todo: set up fragments for all the movies and add them to nav_graph
-//todo: improve switch logic for info-fragment navigation
-//todo: design shaping and improvements
+//TODO: set up fragments for all the movies and add them to nav_graph
+//TODO: design shaping and improvements

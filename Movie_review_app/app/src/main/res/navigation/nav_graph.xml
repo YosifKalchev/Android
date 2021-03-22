@@ -24,10 +24,15 @@
         <action
             android:id="@+id/action_startFragment_to_troyFragment"
             app:destination="@id/troyFragment" />
+
     </fragment>
     <fragment
         tools:layout="@layout/fragment_troy"
         android:id="@+id/troyFragment"
         android:name="com.example.movie_review_app.movie_fragments.TroyFragment"
-        android:label="TroyFragment" />
+        android:label="TroyFragment" >
+        <action
+            android:id="@+id/action_troyFragment_to_startFragment"
+            app:destination="@id/startFragment" />
+    </fragment>
 </navigation>
