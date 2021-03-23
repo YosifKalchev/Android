@@ -8,23 +8,23 @@
     android:background="@color/app_palette_6">
 
     <ImageView
-        android:id="@+id/imgTroy"
+        android:id="@+id/imgZack"
         android:layout_width="300dp"
         android:layout_height="300dp"
         android:layout_margin="16dp"
         android:layout_marginBottom="16dp"
         android:padding="4dp"
         android:scaleType="fitXY"
-        app:layout_constraintBottom_toTopOf="@+id/txtTroy"
+        app:layout_constraintBottom_toTopOf="@+id/txtZack"
         app:layout_constraintDimensionRatio="1:1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/poster_troy"
+        app:srcCompat="@drawable/poster_zack"
         tools:ignore="ContentDescription" />
 
     <TextView
-        android:id="@+id/txtTroy"
+        android:id="@+id/txtZack"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_margin="16dp"
@@ -32,14 +32,14 @@
         android:scrollbarAlwaysDrawVerticalTrack="true"
         android:textColor="@color/app_palette_9"
         android:textSize="20sp"
-        app:layout_constraintBottom_toTopOf="@+id/btmNavTroy"
+        app:layout_constraintBottom_toTopOf="@+id/btmNavZack"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imgTroy"
+        app:layout_constraintTop_toBottomOf="@+id/imgZack"
         app:layout_constraintVertical_weight="1" />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/btmNavTroy"
+        android:id="@+id/btmNavZack"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/app_palette_9"
@@ -50,7 +50,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtTroy"
+        app:layout_constraintTop_toBottomOf="@+id/txtZack"
         app:menu="@menu/menu_bottom" />
 </androidx.constraintlayout.widget.ConstraintLayout>
 

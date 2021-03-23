@@ -9,4 +9,15 @@
     <color name="white">#FFFFFFFF</color>
     <color name="dark_blue">#4287f5</color>
     <color name="light_blue">#BAEFFF</color>
+
+    <color name="app_palette_1">#d5e6ed</color>
+    <color name="app_palette_2">#05a4dd</color>
+    <color name="app_palette_3">#045b8e</color>
+    <color name="app_palette_4">#126e9a</color>
+    <color name="app_palette_5">#639dbc</color>
+    <color name="app_palette_6">#84a4c1</color>
+    <color name="app_palette_7">#0475ab</color>
+    <color name="app_palette_8">#79d5f3</color>
+    <color name="app_palette_9">#00022e</color>
+
 </resources>

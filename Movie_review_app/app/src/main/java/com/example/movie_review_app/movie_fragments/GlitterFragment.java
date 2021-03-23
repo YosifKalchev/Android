@@ -7,7 +7,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
@@ -18,7 +17,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import java.util.ArrayList;
 
-public class TroyFragment extends NavigationFragment {
+public class GlitterFragment extends NavigationFragment {
 
     private TextView txtView;
     private ArrayList<String> movieInfo;
@@ -31,7 +30,7 @@ public class TroyFragment extends NavigationFragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_troy, container, false);
+        return inflater.inflate(R.layout.fragment_glitter, container, false);
     }
 
     @SuppressLint("NonConstantResourceId")
@@ -43,13 +42,13 @@ public class TroyFragment extends NavigationFragment {
 
         assert getArguments() != null;
         movieInfo = getArguments().getStringArrayList("items");
-        txtView = view.findViewById(R.id.txtTroy);
+        txtView = view.findViewById(R.id.txtGlitter);
 
 
-        BottomNavigationView btmNavTroy = view.findViewById(R.id.btmNavTroy);
-        btmNavTroy.setOnNavigationItemSelectedListener(item -> {
+        BottomNavigationView btmNavGlitter = view.findViewById(R.id.btmNavGlitter);
+        btmNavGlitter.setOnNavigationItemSelectedListener(item -> {
             switch (item.getItemId()) {
-                case R.id.action_home: showHomeScreen(view, Direction.TROY_TO_START.getValue()); break;
+                case R.id.action_home: showHomeScreen(view, Direction.GLITTER_TO_START.getValue()); break;
                 case R.id.action_crew: showCrewScreen(txtView, movieInfo); break;
                 case R.id.action_review: showReviewScreen(txtView, movieInfo); break;
                 case R.id.action_publish: showPublishScreen(txtView, movieInfo); break;
@@ -57,4 +56,3 @@ public class TroyFragment extends NavigationFragment {
         });
     }
 }
-//TODO Create fragments for all the movies.

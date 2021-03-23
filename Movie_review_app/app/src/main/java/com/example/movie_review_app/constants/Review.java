@@ -45,8 +45,54 @@ public enum Review {
     BAD_BOYS("Detectives Mike Lowery and Marcus Brunette have 72 hours to find $100 million" +
             " worth of heroin before Internal Affairs shuts them down. Lowery becomes more involved " +
             "after a friend is murdered by the drug dealers. Matters become complicated when Lowery " +
-            "and Brunette have to switch places to convince a witness to the murder to cooperate.")
+            "and Brunette have to switch places to convince a witness to the murder to cooperate."),
+
+    GODZILA_VS_KONG("With the world still shaken from the battle between Ghidorah and Godzilla, " +
+            "humanity has begun to try and co-exist with the Titans. But after Godzilla begins his own " +
+            "reign of terror, humanity must call on another legend to stop him: Kong. Not everything is " +
+            "as it seems when Monarch travel to Skull Island, where a mysterious young girl known to " +
+            "communicate with Kong must warn him of the impending danger. As Godzilla rages across nations, " +
+            "destroying everything in his path, the fate of the world in the hands of these two legendary " +
+            "Titans as both Kong and Godzilla battle for the right of King, and to stop the real threat " +
+            "that faces them."),
+
+    ZACK_SNYDER ("Zack Snyder's definitive director's cut of Justice League. Determined to" +
+            " ensure Superman's ultimate sacrifice was not in vain, Bruce Wayne aligns forces with" +
+            " Diana Prince with plans to recruit a team of metahumans to protect the world from an " +
+            "approaching threat of catastrophic proportions. Determined to ensure Superman's ultimate " +
+            "sacrifice was not in vain, Bruce Wayne aligns forces with Diana Prince with plans to " +
+            "recruit a team of metahumans to protect the world from an approaching threat of catastrophic " +
+            "proportions. The task proves more difficult than Bruce imagined, as each of the recruits " +
+            "must face the demons of their own pasts to transcend that which has held them back, " +
+            "allowing them to come together, finally forming an unprecedented league of heroes. " +
+            "Now united, Batman, Wonder Woman, Aquaman, Cyborg and The Flash may be too late to save" +
+            " the planet from Steppenwolf, DeSaad and Darkseid and their dreadful intentions." ),
+
+    RUSH_HOUR_3("After an attempted assassination on Ambassador Han, Lee and Carter head to Paris to" +
+                        " protect a French woman with knowledge of the Triads' secret leaders."),
+
+    CLASH_OF_TITANS("Born of god but raised by humans, Perseus, the demigod son of mighty Zeus, " +
+            "the king of the gods, vows to take his revenge on Hades, the terrifying ruler of the " +
+            "Underworld, when he sees his mortal family perish. As the race of men summons up the" +
+            " courage to rebel against the gods of Olympus, the doomed city of Argos becomes a " +
+            "battlefield, as Hades threatens to unleash the legendary sea-monster, Kraken, unless " +
+            "the fair Princess Andromeda willingly offers herself as a sacrifice. Now, having nothing" +
+            " more to lose, Perseus embarks on a daring, peril-laden quest to stop the forces of evil " +
+            "before Hades plunges the world into chaos and darkness. But, to survive the relentless" +
+            " onslaught of demons and terrible adversaries, Perseus must first embrace his destiny." +
+            " Will Perseus defy the gods, and save humankind in the clash of the Titans?"),
+
+    GLITTER("Billie Frank is a shy, young multiracial girl who is sent away by her alcoholic " +
+            "mother at a very early age. At an orphanage, she befriends Louise and Roxanne. Flash " +
+            "forward to 1983. Billie and her friends are spotted by a record producer, Timothy Walker," +
+            " who wants them to sing backup for his latest pop-music discovery. But when super DJ " +
+            "Julian Dice hears Billie's incredible voice, he makes a shady deal with Timothy to get" +
+            " her out of that dead-end situation. Soon, Billie and Dice are making hits inside the " +
+            "studio, and falling in love outside of it. Eventually, the pressure of her newfound" +
+            " celebrity puts too heavy a strain on Billie, forcing her to decide what it is she " +
+            "really wants from Dice, and what she wants for herself.")
     ;
+
 
     private final String value;
 

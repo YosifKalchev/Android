@@ -43,18 +43,29 @@ public class StartFragment extends Fragment {
 
     private void setUpRecyclerView(View view) {
         Movie movie1 = new Movie("Troy", 2004, 1, Review.TROY, Grade.VERY_GOOD,
-                Crew.TROY_CAST);
+                Crew.TROY);
         Movie movie2 = new Movie("Avatar", 2009, 2, Review.AVATAR, Grade.SUPERIOR,
-                Crew.AVATAR_CAST);
+                Crew.AVATAR);
         Movie movie3 = new Movie("Taken", 2008, 3, Review.TAKEN, Grade.EXCELLENT,
-                Crew.TAKEN_CAST);
+                Crew.TAKEN);
         Movie movie4 = new Movie("Mortal Kombat", 2021, 4,  Review.MORTAL_KOMBAT,
-                Grade.OUTSTANDING, Crew.MORTAL_KOMBAT_CAST);
+                Grade.OUTSTANDING, Crew.MORTAL_KOMBAT);
         Movie movie5 = new Movie("Bad Boys", 1995, 5, Review.BAD_BOYS, Grade.GOOD,
-                Crew.BAD_BOYS_CAST);
+                Crew.BAD_BOYS);
+        Movie movie6 = new Movie("Godzilla vs Kong", 2021, 6, Review.GODZILA_VS_KONG,
+                Grade.UNSATISFACTORY, Crew.GODZILLA_VS_KONG);
+        Movie movie7 = new Movie("Zack Snyder's Justice League", 2021, 7,
+                Review.ZACK_SNYDER, Grade.FAILURE, Crew.ZACK_SNYDER);
+        Movie movie8 = new Movie("Rush Hour 3", 2007, 8, Review.RUSH_HOUR_3,
+                Grade.SATISFACTORY, Crew.RUSH_HOUR_3);
+        Movie movie9 = new Movie("Clash of the titans", 2010, 9, Review.CLASH_OF_TITANS,
+                Grade.AVERAGE, Crew.CLASH_OF_TITANS);
+        Movie movie10 = new Movie("Glitter", 2001, 10, Review.GLITTER,
+                Grade.POOR, Crew.GLITTER);
 
 
-        List<Movie> movies =  Arrays.asList(movie1, movie2, movie3, movie4, movie5);
+        List<Movie> movies =  Arrays.asList(movie1, movie2, movie3, movie4, movie5,
+                movie6, movie7, movie8, movie9, movie10);
         recyclerView = view.findViewById(R.id.recMovieList);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         MovieAdapter adapter = new MovieAdapter(movies);

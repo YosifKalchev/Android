@@ -12,6 +12,7 @@ import androidx.fragment.app.Fragment;
 import androidx.navigation.Navigation;
 
 import com.example.movie_review_app.R;
+import com.example.movie_review_app.constants.Direction;
 
 public class SplashScreenFragment extends Fragment {
 
@@ -37,10 +38,8 @@ public class SplashScreenFragment extends Fragment {
         Handler handler = new Handler();
         handler.postDelayed(() -> Navigation
                 .findNavController(view)
-                .navigate(R.id.action_splashScreenFragment_to_startFragment), 500);
+                .navigate(Direction.SPLASH_SCREEN_TO_START.getValue()), 5000);
 
     }
 }
 
-//TODO: set up fragments for all the movies and add them to nav_graph
-//TODO: design shaping and improvements

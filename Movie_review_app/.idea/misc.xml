@@ -11,17 +11,32 @@
         <entry key="..\:/Users/ykalc/AndroidStudioProjects/Applications/Movie_review_app/app/src/main/res/drawable/ic_cast.xml" value="0.12916666666666668" />
         <entry key="..\:/Users/ykalc/AndroidStudioProjects/Applications/Movie_review_app/app/src/main/res/drawable/ic_crew.xml" value="0.12916666666666668" />
         <entry key="..\:/Users/ykalc/AndroidStudioProjects/Applications/Movie_review_app/app/src/main/res/drawable/ic_home.xml" value="0.15833333333333333" />
+        <entry key="..\:/Users/ykalc/AndroidStudioProjects/Applications/Movie_review_app/app/src/main/res/drawable/ic_home_base.xml" value="0.2703125" />
         <entry key="..\:/Users/ykalc/AndroidStudioProjects/Applications/Movie_review_app/app/src/main/res/drawable/ic_launcher_foreground.xml" value="0.2546875" />
+        <entry key="..\:/Users/ykalc/AndroidStudioProjects/Applications/Movie_review_app/app/src/main/res/drawable/ic_published.xml" value="0.2703125" />
+        <entry key="..\:/Users/ykalc/AndroidStudioProjects/Applications/Movie_review_app/app/src/main/res/drawable/ic_review.xml" value="0.2703125" />
         <entry key="..\:/Users/ykalc/AndroidStudioProjects/Applications/Movie_review_app/app/src/main/res/layout-v26/fragment_troy.xml" value="0.264" />
         <entry key="..\:/Users/ykalc/AndroidStudioProjects/Applications/Movie_review_app/app/src/main/res/layout/activity_main.xml" value="0.13020833333333334" />
+        <entry key="..\:/Users/ykalc/AndroidStudioProjects/Applications/Movie_review_app/app/src/main/res/layout/fragment_avatar.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/ykalc/AndroidStudioProjects/Applications/Movie_review_app/app/src/main/res/layout/fragment_bad_boys.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/ykalc/AndroidStudioProjects/Applications/Movie_review_app/app/src/main/res/layout/fragment_badboys.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/ykalc/AndroidStudioProjects/Applications/Movie_review_app/app/src/main/res/layout/fragment_glitter.xml" value="0.15885416666666666" />
+        <entry key="..\:/Users/ykalc/AndroidStudioProjects/Applications/Movie_review_app/app/src/main/res/layout/fragment_godzilla.xml" value="0.15885416666666666" />
+        <entry key="..\:/Users/ykalc/AndroidStudioProjects/Applications/Movie_review_app/app/src/main/res/layout/fragment_mortal_kombat.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/ykalc/AndroidStudioProjects/Applications/Movie_review_app/app/src/main/res/layout/fragment_mortalkombat.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/ykalc/AndroidStudioProjects/Applications/Movie_review_app/app/src/main/res/layout/fragment_navigaton.xml" value="0.25025641025641027" />
-        <entry key="..\:/Users/ykalc/AndroidStudioProjects/Applications/Movie_review_app/app/src/main/res/layout/fragment_splash_screen.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/ykalc/AndroidStudioProjects/Applications/Movie_review_app/app/src/main/res/layout/fragment_rush_hour.xml" value="0.15885416666666666" />
+        <entry key="..\:/Users/ykalc/AndroidStudioProjects/Applications/Movie_review_app/app/src/main/res/layout/fragment_splash_screen.xml" value="0.2" />
         <entry key="..\:/Users/ykalc/AndroidStudioProjects/Applications/Movie_review_app/app/src/main/res/layout/fragment_start.xml" value="0.2" />
+        <entry key="..\:/Users/ykalc/AndroidStudioProjects/Applications/Movie_review_app/app/src/main/res/layout/fragment_taken.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/ykalc/AndroidStudioProjects/Applications/Movie_review_app/app/src/main/res/layout/fragment_titans.xml" value="0.15885416666666666" />
         <entry key="..\:/Users/ykalc/AndroidStudioProjects/Applications/Movie_review_app/app/src/main/res/layout/fragment_troy.xml" value="0.2" />
+        <entry key="..\:/Users/ykalc/AndroidStudioProjects/Applications/Movie_review_app/app/src/main/res/layout/fragment_zack.xml" value="0.15885416666666666" />
         <entry key="..\:/Users/ykalc/AndroidStudioProjects/Applications/Movie_review_app/app/src/main/res/layout/movie_item.xml" value="0.264" />
         <entry key="..\:/Users/ykalc/AndroidStudioProjects/Applications/Movie_review_app/app/src/main/res/layout/splash_screen_fragment.xml" value="0.176" />
         <entry key="..\:/Users/ykalc/AndroidStudioProjects/Applications/Movie_review_app/app/src/main/res/layout/start_fragment.xml" value="0.13020833333333334" />
         <entry key="..\:/Users/ykalc/AndroidStudioProjects/Applications/Movie_review_app/app/src/main/res/menu/menu_bottom.xml" value="0.264" />
+        <entry key="..\:/Users/ykalc/AndroidStudioProjects/Applications/Movie_review_app/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.175" />
       </map>
     </option>
   </component>

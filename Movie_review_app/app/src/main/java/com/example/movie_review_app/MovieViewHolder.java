@@ -49,6 +49,11 @@ public class MovieViewHolder extends RecyclerView.ViewHolder {
                 case 2 : navigateTo(2, Direction.START_TO_TAKEN); break;
                 case 3 : navigateTo(3, Direction.START_TO_MORTAL_KOMBAT); break;
                 case 4 : navigateTo(4, Direction.START_TO_BAD_BOYS); break;
+                case 5 : navigateTo(5, Direction.START_TO_GODZILLA); break;
+                case 6 : navigateTo(6, Direction.START_TO_ZACK_SNYDER); break;
+                case 7 : navigateTo(7, Direction.START_TO_RUSH_HOUR_3); break;
+                case 8 : navigateTo(8, Direction.START_TO_CLASH_OF_TITANS); break;
+                case 9 : navigateTo(9, Direction.START_TO_GLITTER); break;
             }
         });
     }
