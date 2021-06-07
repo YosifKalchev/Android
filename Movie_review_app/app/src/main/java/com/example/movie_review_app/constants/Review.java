@@ -11,6 +11,7 @@ public enum Review {
             "before defeated Trojans. But they come to a stop by Hector, Prince of Troy. The whole movie " +
             "shows their battle struggles and the foreshadowing of fate in this adaptation of Homer's " +
             "classic \"The Iliad."),
+
     AVATAR("When his brother is killed in a robbery, paraplegic Marine Jake Sully decides to take" +
             " his place in a mission on the distant world of Pandora. There he learns of greedy corporate " +
             "figurehead Parker Selfridge's intentions of driving off the native humanoid \"Na'vi\" in " +
@@ -22,6 +23,7 @@ public enum Review {
             "in love with the beautiful alien Neytiri, the restless Colonel moves forward with his" +
             " ruthless extermination tactics, forcing the soldier to take a stand - and fight back" +
             " in an epic battle for the fate of Pandora."),
+
     TAKEN("Former CIA agent Bryan Mills reluctantly agrees to let his 17 year old daughter Kim " +
             "go to Paris on a trip. His ex-wife Lenore and her new husband Stuart are all for it and " +
             "Kim sets off with a friend. On arrival in Paris however, Kim and her friend are kidnapped" +
@@ -29,6 +31,7 @@ public enum Review {
             "of a conversation from when Kim phoned him in a panic. With that, he's able to identify " +
             "the origin of the speaker and which criminal gang he's with. Once in Paris, he quickly " +
             "shows everyone connected with the case that he will stop at nothing to get his daughter back."),
+
     MORTAL_KOMBAT("MMA fighter Cole Young (Lewis Tan), accustomed to taking a beating for money," +
             " is unaware of his heritage-or why Outworld's Emperor Shang Tsung (Chin Han) has sent his " +
             "best warrior, Sub-Zero (Joe Taslim), an otherworldly Cryomancer, to hunt Cole down." +
@@ -42,6 +45,7 @@ public enum Review {
             "for the universe. But will Cole be pushed hard enough to unlock his arcana-the immense " +
             "power from within his soul-in time to save not only his family but to stop Outworld " +
             "once and for all?"),
+
     BAD_BOYS("Detectives Mike Lowery and Marcus Brunette have 72 hours to find $100 million" +
             " worth of heroin before Internal Affairs shuts them down. Lowery becomes more involved " +
             "after a friend is murdered by the drug dealers. Matters become complicated when Lowery " +

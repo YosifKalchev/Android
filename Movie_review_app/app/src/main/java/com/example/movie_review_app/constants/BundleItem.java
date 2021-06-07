@@ -7,7 +7,8 @@ public enum BundleItem {
     REVIEW(2),
     YEAR_OF_PUBLISH(3),
     GRADE(4),
-    ID(5)
+    ID(5),
+    PICTURE (6)
     ;
 
     private final int value;
