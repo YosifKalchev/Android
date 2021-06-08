@@ -11,4 +11,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
     }
+
+    //todo create the screens: GAME, PLAY-GAME, LEADERBOARD
+    //TODO Create floating button and local datebase
+
 }

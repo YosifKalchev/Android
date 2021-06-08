@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal">
+
+    <TextView
+        android:id="@+id/txtQuestionField"
+        android:layout_width="352dp"
+        android:layout_height="241dp"
+        android:layout_marginTop="40dp"
+        android:background="#F2AFEC"
+        android:text="Question"
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/txtCorrectAnswer"
+        android:layout_width="357dp"
+        android:layout_height="36dp"
+        android:layout_marginTop="88dp"
+        android:background="#F2AFEC"
+        android:text="CorrectAnswer"
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.703"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtQuestionField" />
+
+    <TextView
+        android:id="@+id/txtWrongAnswers"
+        android:layout_width="294dp"
+        android:layout_height="149dp"
+        android:layout_marginTop="148dp"
+        android:background="#F2AFEC"
+        android:text="WrongAnswers"
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtQuestionField" />
+
+    <TextView
+        android:id="@+id/txtCategory"
+        android:layout_width="137dp"
+        android:layout_height="55dp"
+        android:layout_marginTop="28dp"
+        android:background="#F2AFEC"
+        android:text="Category"
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.109"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtQuestionField" />
+
+    <TextView
+        android:id="@+id/txtDifficulty"
+        android:layout_width="202dp"
+        android:layout_height="50dp"
+        android:background="#F2AFEC"
+        android:text="Difficulty"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.861"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtQuestionField"
+        app:layout_constraintVertical_bias="0.07" />
+
+    <Button
+        android:id="@+id/btnGenerateQuestion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Generate question"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>

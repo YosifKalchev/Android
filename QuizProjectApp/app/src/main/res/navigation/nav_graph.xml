@@ -8,14 +8,22 @@
 
     <fragment
         android:id="@+id/mainFragment"
-        android:name="com.example.quizproject.MainFragment"
-        android:label="MainFragment" />
+        android:name="com.example.quizproject.fragments.MainFragment"
+        android:label="MainFragment" >
+        <action
+            android:id="@+id/action_mainFragment_to_questionFragment"
+            app:destination="@id/questionFragment" />
+    </fragment>
     <fragment
         android:id="@+id/splashScreenFragment"
-        android:name="com.example.quizproject.SplashScreenFragment"
+        android:name="com.example.quizproject.fragments.SplashScreenFragment"
         android:label="SplashScreenFragment" >
         <action
             android:id="@+id/action_splashScreenFragment_to_mainFragment"
             app:destination="@id/mainFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/questionFragment"
+        android:name="com.example.quizproject.fragments.QuestionFragment"
+        android:label="QuestionFragment" />
 </navigation>
