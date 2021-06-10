@@ -18,8 +18,8 @@
     <string name="select_category2">Select second category:</string>
     <string name="select_game_difficulty">Select game difficulty:</string>
     <string name="todo">TODO</string>
-    <string name="than">, than</string>
-    <string name="first_should_answer">First should answer</string>
+    <string name="than"> , than  </string>
+    <string name="first_should_answer">First should answer  </string>
     <string name="next_question_in">Next question in:</string>
     <string name="proceed">proceed</string>
     <string name="now_answers">Now answers:</string>
@@ -36,4 +36,7 @@
     <string name="enter_your_name_here">Enter your name here</string>
     <string name="history"><u>HISTORY</u></string>
     <string name="games"><u>GAMES</u></string>
+    <string name="player_1">Player 1</string>
+    <string name="player_2">Player 2</string>
+    <string name="pass">PASS</string>
 </resources>

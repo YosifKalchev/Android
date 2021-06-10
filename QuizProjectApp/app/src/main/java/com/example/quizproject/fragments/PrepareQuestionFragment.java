@@ -19,7 +19,7 @@ import com.example.quizproject.tools.QuestionCountdownTimer;
 import com.example.quizproject.R;
 import com.example.quizproject.tools.ThreadUtils;
 import com.example.quizproject.repos.PlayerRepository;
-import com.example.quizproject.repos.QuestionsCategoryTwoRepo;
+import com.example.quizproject.repos.BooleanQuestionsRepo;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -152,7 +152,7 @@ public class PrepareQuestionFragment extends Fragment {
             Log.e("MainFragment", "Number is zero");
         } else {
 
-            txtQuestionField.setText(QuestionsCategoryTwoRepo.getInstance().getQuestion(roundCounter));
+            txtQuestionField.setText(BooleanQuestionsRepo.getInstance().getQuestion(roundCounter));
         }
         roundCounter++;
         MultipleChoiceQuestionsResult.roundNumber = roundCounter;

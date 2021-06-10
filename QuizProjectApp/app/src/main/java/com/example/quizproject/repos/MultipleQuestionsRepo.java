@@ -3,18 +3,18 @@ package com.example.quizproject.repos;
 
 import com.example.quizproject.models.Result;
 
-public class QuestionsCategoryOneRepo {
+public class MultipleQuestionsRepo {
 
     private Result[] categoryOneQuestions;
 
-    private static QuestionsCategoryOneRepo instance;
+    private static MultipleQuestionsRepo instance;
 
-    public static QuestionsCategoryOneRepo getInstance() {
-        if(instance == null) instance = new QuestionsCategoryOneRepo();
+    public static MultipleQuestionsRepo getInstance() {
+        if(instance == null) instance = new MultipleQuestionsRepo();
         return instance;
     }
 
-    private QuestionsCategoryOneRepo() {
+    private MultipleQuestionsRepo() {
         this.categoryOneQuestions = new Result[]{};
     }
 

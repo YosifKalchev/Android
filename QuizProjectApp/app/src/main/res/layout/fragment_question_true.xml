@@ -8,7 +8,6 @@
     android:background="@color/pc_light_gray">
 
     <TextView
-        android:text="sssdasdadasd"
         android:id="@+id/txtQuestionField"
         android:layout_width="match_parent"
         android:layout_height="200dp"
@@ -65,9 +64,9 @@
         android:layout_marginEnd="20dp"
         android:background="@color/pc_dark_gray"
         android:padding="20dp"
-        android:text="PASS"
+        android:text="@string/pass"
         android:textColor="@color/pc_light_gray"
-        app:layout_constraintBottom_toTopOf="@+id/btnGenerateQuestion"
+        app:layout_constraintBottom_toTopOf="@+id/txtGenerateQuestion"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -76,7 +75,7 @@
 
     <TextView
         android:layout_marginBottom="20dp"
-        android:id="@+id/btnGenerateQuestion"
+        android:id="@+id/txtGenerateQuestion"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/next_question_in"
