@@ -13,6 +13,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
     //todo create the screens: GAME, PLAY-GAME, LEADERBOARD
-    //TODO Create floating button and local datebase
+    //TODO Create floating button and local database
 
 }

@@ -5,10 +5,10 @@ public class Game {
 
     String title;
     String difficulty;
-    String firstTopic;
-    String secondTopic;
+    String firstCategory;
+    String secondCategory;
     String dateLastPlayed;
-    String topPlayer;
+    Player topPlayer;
 
 
     public Game() {
@@ -18,8 +18,8 @@ public class Game {
     public Game(String title, String difficulty, String firstTopic, String secondTopic) {
         this.title = title;
         this.difficulty = difficulty;
-        this.firstTopic = firstTopic;
-        this.secondTopic = secondTopic;
+        this.firstCategory = firstTopic;
+        this.secondCategory = secondTopic;
     }
 
     public String getTitle() {
@@ -38,20 +38,20 @@ public class Game {
         this.difficulty = difficulty;
     }
 
-    public String getFirstTopic() {
-        return firstTopic;
+    public String getFirstCategory() {
+        return firstCategory;
     }
 
-    public void setFirstTopic(String firstTopic) {
-        this.firstTopic = firstTopic;
+    public void setFirstCategory(String firstCategory) {
+        this.firstCategory = firstCategory;
     }
 
-    public String getSecondTopic() {
-        return secondTopic;
+    public String getSecondCategory() {
+        return secondCategory;
     }
 
-    public void setSecondTopic(String secondTopic) {
-        this.secondTopic = secondTopic;
+    public void setSecondCategory(String secondCategory) {
+        this.secondCategory = secondCategory;
     }
 
     public String getDateLastPlayed() {
@@ -62,11 +62,11 @@ public class Game {
         this.dateLastPlayed = dateLastPlayed;
     }
 
-    public String getTopPlayer() {
+    public Player getTopPlayer() {
         return topPlayer;
     }
 
-    public void setTopPlayer(String topPlayer) {
+    public void setTopPlayer(Player topPlayer) {
         this.topPlayer = topPlayer;
     }
 }

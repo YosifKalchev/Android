@@ -1,10 +1,10 @@
-package com.example.quizproject.remote.models.quizApi;
+package com.example.quizproject.remote.models.quizApi.questions_models;
 
 
-public class QuizResponseModel {
+public class ResponseModelForQuestions {
 
     private int response_code;
-    public ResultObject[] results;
+    public ResultObjForQuestions[] results;
 
     public int getResponse_code() {
         return response_code;
@@ -14,11 +14,11 @@ public class QuizResponseModel {
         this.response_code = response_code;
     }
 
-    public ResultObject[] getResults() {
+    public ResultObjForQuestions[] getResults() {
         return results;
     }
 
-    public void setResults(ResultObject[] results) {
+    public void setResults(ResultObjForQuestions[] results) {
         this.results = results;
     }
 

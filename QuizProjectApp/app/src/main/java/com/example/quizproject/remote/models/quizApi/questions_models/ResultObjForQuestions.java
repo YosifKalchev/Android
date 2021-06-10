@@ -1,6 +1,6 @@
-package com.example.quizproject.remote.models.quizApi;
+package com.example.quizproject.remote.models.quizApi.questions_models;
 
-public class ResultObject {
+public class ResultObjForQuestions {
 
     private String category;
     private String type;

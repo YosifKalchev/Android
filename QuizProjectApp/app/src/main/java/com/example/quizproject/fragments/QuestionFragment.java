@@ -17,7 +17,7 @@ import com.example.quizproject.R;
 import com.example.quizproject.remote.models.QuotesApi.GenresResponseModel;
 import com.example.quizproject.remote.models.QuotesApi.QuotesApiService;
 import com.example.quizproject.remote.models.quizApi.QuizApiService;
-import com.example.quizproject.remote.models.quizApi.QuizResponseModel;
+import com.example.quizproject.remote.models.quizApi.questions_models.ResponseModelForQuestions;
 
 import org.jetbrains.annotations.NotNull;
 
@@ -72,12 +72,14 @@ public class QuestionFragment extends Fragment {
 
     private void initView(View view) {
 
-        txtQuestionField = view.findViewById(R.id.txtQuestionField);
-        txtCorrectAnswer = view.findViewById(R.id.txtCorrectAnswer);
-        txtWrongAnswers = view.findViewById(R.id.txtWrongAnswers);
-        txtDifficulty = view.findViewById(R.id.txtDifficulty);
-        txtCategory = view.findViewById(R.id.txtCategory);
-        btnGenerateQuestion = view.findViewById(R.id.btnGenerateQuestion);
+       //todo use the correct fields for variables
+
+//        txtQuestionField = view.findViewById(R.id.txtQuestionField);
+//        txtCorrectAnswer = view.findViewById(R.id.txtCorrectAnswer);
+//        txtWrongAnswers = view.findViewById(R.id.txtWrongAnswers);
+//        txtDifficulty = view.findViewById(R.id.txtDifficulty);
+//        txtCategory = view.findViewById(R.id.txtCategory);
+//        btnGenerateQuestion = view.findViewById(R.id.btnGenerateQuestion);
 
         setupQuotesRetrofit();
         setupQuizRetrofit();
@@ -105,26 +107,27 @@ public class QuestionFragment extends Fragment {
     private void loadQuestionFromApi() {
 
 
-            serviceQuiz.getQuestion().enqueue(new Callback<QuizResponseModel>() {
+            serviceQuiz.getQuestion().enqueue(new Callback<ResponseModelForQuestions>() {
                 @Override
-                public void onResponse(@NotNull Call<QuizResponseModel> call, @NotNull Response<QuizResponseModel> response) {
+                public void onResponse(@NotNull Call<ResponseModelForQuestions> call, @NotNull Response<ResponseModelForQuestions> response) {
                     if (response.isSuccessful()) {
-                        QuizResponseModel qrm = response.body();
-                        for (int i = 0; i < Objects.requireNonNull(qrm).results.length; i++) {
-                            Log.e("MainFragment", "Question:"+qrm.results[i].getCorrect_answer());
-                            txtQuestionField.setText(qrm.results[i].getQuestion());
-                            txtCategory.setText(qrm.results[i].getCategory());
-                            txtCorrectAnswer.setText(qrm.results[i].getCorrect_answer());
-                            txtWrongAnswers.setText(Arrays.toString(qrm.results[i].getIncorrect_answers()));
-                            txtDifficulty.setText(qrm.results[i].getDifficulty());
-                        }
+                        Log.e("MainFragment", "Call Succeeded");
+//                        ResponseModelForQuestions qrm = response.body();
+//                        for (int i = 0; i < Objects.requireNonNull(qrm).results.length; i++) {
+//                            Log.e("MainFragment", "Question:"+qrm.results[i].getCorrect_answer());
+//                            txtQuestionField.setText(qrm.results[i].getQuestion());
+//                            txtCategory.setText(qrm.results[i].getCategory());
+//                            txtCorrectAnswer.setText(qrm.results[i].getCorrect_answer());
+//                            txtWrongAnswers.setText(Arrays.toString(qrm.results[i].getIncorrect_answers()));
+//                            txtDifficulty.setText(qrm.results[i].getDifficulty());
+//                        }
                     } else {
                         Log.e("MainFragment", "Call Failed");
                     }
                 }
 
                 @Override
-                public void onFailure(@NotNull Call<QuizResponseModel> call, @NotNull Throwable t) {
+                public void onFailure(@NotNull Call<ResponseModelForQuestions> call, @NotNull Throwable t) {
                     Log.e("MainFragment", "Call Failed", t);
                 }
             });
