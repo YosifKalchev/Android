@@ -25,4 +25,15 @@
     <string name="now_answers">Now answers:</string>
     <string name="no">NO</string>
     <string name="yes">YES</string>
+    <string name="players">PLAYERS</string>
+    <string name="add_up_to_four_players">Add up to four players:</string>
+    <string name="avatar">Avatar</string>
+    <string name="gallery">Gallery</string>
+    <string name="camera">Camera</string>
+    <string name="add">Add</string>
+    <string name="cancel">Cancel</string>
+    <string name="name">NAME</string>
+    <string name="enter_your_name_here">Enter your name here</string>
+    <string name="history"><u>HISTORY</u></string>
+    <string name="games"><u>GAMES</u></string>
 </resources>

@@ -1,8 +1,5 @@
 package com.example.quizproject.fragments;
 
-import android.annotation.SuppressLint;
-import android.icu.text.DateFormat;
-import android.icu.text.SimpleDateFormat;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -12,7 +9,6 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.annotation.RequiresApi;
-import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
 
 import androidx.navigation.Navigation;
@@ -20,16 +16,15 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.quizproject.R;
-import com.example.quizproject.bottomRecView.BottomRecViewAdapter;
+import com.example.quizproject.models.Game;
+import com.example.quizproject.recview.bottomRecView.BottomRecViewAdapter;
 import com.example.quizproject.repos.GameRepository;
-import com.example.quizproject.topRecView.TopRecViewAdapter;
+import com.example.quizproject.recview.topRecView.TopRecViewAdapter;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import org.jetbrains.annotations.NotNull;
 
-import java.text.Format;
 import java.util.Arrays;
-import java.util.Calendar;
-import java.util.Date;
 import java.util.List;
 
 public class MainFragment extends Fragment {
@@ -57,6 +52,11 @@ public class MainFragment extends Fragment {
         createTopRecView(view);
         createBottomRecView(view);
 
+        FloatingActionButton floatingButton = view.findViewById(R.id.floatingActionButton);
+        floatingButton.setOnClickListener(v ->
+                Navigation.findNavController(view)
+                        .navigate(R.id.action_mainFragment_to_createGameFragment));
+
             }
 
 
@@ -71,8 +71,7 @@ public class MainFragment extends Fragment {
 
     private void createBottomRecView(View view) {
 
-        List<String> bottomS = Arrays.asList("Bottom 1", "Bottom 2",
-                "Bottom 3", "4", "5", "6");
+        List<Game> bottomS = GameRepository.getInstance().getGames();
         RecyclerView bottomRecyclerView = view.findViewById(R.id.bottomRecView);
         bottomRecyclerView.setLayoutManager(new LinearLayoutManager(requireContext()));
         BottomRecViewAdapter bottomAdapter = new BottomRecViewAdapter(bottomS);

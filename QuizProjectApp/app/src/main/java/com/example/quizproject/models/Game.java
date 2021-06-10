@@ -2,7 +2,7 @@ package com.example.quizproject.models;
 
 public class Game {
 
-
+    String icon;
     String title;
     String difficulty;
     String firstCategory;
@@ -20,6 +20,7 @@ public class Game {
         this.difficulty = difficulty;
         this.firstCategory = firstTopic;
         this.secondCategory = secondTopic;
+        this.dateLastPlayed = "TestDate: 12.04.2021";
     }
 
     public String getTitle() {
@@ -68,5 +69,13 @@ public class Game {
 
     public void setTopPlayer(Player topPlayer) {
         this.topPlayer = topPlayer;
+    }
+
+    public String getIcon() {
+        return icon;
+    }
+
+    public void setIcon(String icon) {
+        this.icon = icon;
     }
 }

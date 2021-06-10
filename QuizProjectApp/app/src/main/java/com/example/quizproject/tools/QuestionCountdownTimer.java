@@ -1,32 +1,29 @@
-package com.example.quizproject;
+package com.example.quizproject.tools;
 
+import android.annotation.SuppressLint;
 import android.os.CountDownTimer;
 import android.widget.TextView;
 
 public class QuestionCountdownTimer {
 
-    String text;
-    TextView text1;
-    private static final String FORMAT = "%02d:%02d:%02d";
-    int seconds;
+    private final String text;
 
     public QuestionCountdownTimer(TextView text1, int seconds, String text) {
-        this.text1 = text1;
-        this.seconds = seconds;
         this.text = text;
     }
 
-    public void reverseTimer(int Seconds, TextView tv) {
+    public void countdown(int Seconds, TextView txtView) {
         new CountDownTimer(Seconds * 1000 + 1000, 1000) {
-            public void onTick(long millisUntilFinished) {
-                int seconds = (int) (millisUntilFinished / 1000);
-                int minutes = seconds / 60;
+            @SuppressLint("SetTextI18n")
+            public void onTick(long millisecondsLeft) {
+                int seconds = (int) (millisecondsLeft / 1000);
                 seconds = seconds % 60;
-                tv.setText(text + "\n" + seconds);
+                txtView.setText(text + "\n" + seconds);
             }
 
+            @SuppressLint("SetTextI18n")
             public void onFinish() {
-//                tv.setText("Completed");
+                txtView.setText("Completed");
             }
         }.start();
     }

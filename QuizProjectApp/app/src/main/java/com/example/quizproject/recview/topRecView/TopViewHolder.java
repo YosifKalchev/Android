@@ -1,16 +1,11 @@
-package com.example.quizproject.topRecView;
+package com.example.quizproject.recview.topRecView;
 
-import android.annotation.SuppressLint;
-import android.icu.text.DateFormat;
-import android.icu.text.SimpleDateFormat;
-import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.RequiresApi;
 import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -19,7 +14,6 @@ import com.example.quizproject.models.Game;
 
 import org.jetbrains.annotations.NotNull;
 
-import java.util.Date;
 import java.util.List;
 
 public class TopViewHolder extends RecyclerView.ViewHolder {
@@ -34,8 +28,9 @@ public class TopViewHolder extends RecyclerView.ViewHolder {
     private TextView txtCategoryOne;
     private TextView txtCategoryTwo;
     private View singleElement;
-    private Bundle bundle;
+    private Bundle bundle = new Bundle();
     private TextView txtDate;
+
 
 
     public TopViewHolder(@NonNull @NotNull View itemView) {
@@ -80,9 +75,6 @@ public class TopViewHolder extends RecyclerView.ViewHolder {
 
 
     private void navigateToGameInfo() {
-
-        bundle = new Bundle();
-
 
         singleElement.setOnClickListener(v ->
                 Navigation.findNavController(v)

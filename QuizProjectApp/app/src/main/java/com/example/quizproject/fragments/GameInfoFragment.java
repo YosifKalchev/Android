@@ -7,7 +7,6 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -26,7 +25,7 @@ public class GameInfoFragment extends Fragment {
     private TextView category1;
     private TextView category2;
     private TextView dateLastPlayed;
-    private TextView topPlayer;
+    private TextView topPlayerName;
     private ImageView diffMedium;
     private ImageView diffHard;
     private String gameTitle;
@@ -55,13 +54,12 @@ public class GameInfoFragment extends Fragment {
         setUpToolbar(view);
         initView(view);
         bindData(currentGame);
-
         setupButton(view);
 
     }
 
     private void setupButton(@NotNull View view) {
-        Button btnPlayGame = view.findViewById(R.id.btnPlayGame);
+        Button btnPlayGame = view.findViewById(R.id.btnCreateGame);
         btnPlayGame.setOnClickListener(v ->
                 Navigation
                         .findNavController(v)
@@ -86,7 +84,7 @@ public class GameInfoFragment extends Fragment {
         category1 = view.findViewById(R.id.txtCategory1);
         category2 = view.findViewById(R.id.txtCategory2);
         dateLastPlayed = view.findViewById(R.id.txtLastPlayedInfo);
-        topPlayer = view.findViewById(R.id.txtTopPlayerInfo);
+        topPlayerName = view.findViewById(R.id.txtTopPlayerInfo);
         diffMedium = view.findViewById(R.id.imgDifficultyMedium);
         diffHard = view.findViewById(R.id.imgDifficultyHard);
 
@@ -102,4 +100,7 @@ public class GameInfoFragment extends Fragment {
         });
         toolbar.inflateMenu(R.menu.menu_game_tb);
     }
+
+    //todo create clickable rows:
+    //todo 1) Last played -> GameHistory // 2) TopPlayed -> GameLeaderboardFragment
 }

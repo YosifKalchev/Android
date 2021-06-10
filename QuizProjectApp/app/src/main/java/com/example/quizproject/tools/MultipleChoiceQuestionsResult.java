@@ -1,6 +1,6 @@
-package com.example.quizproject;
+package com.example.quizproject.tools;
 
-public class FirstRoundResult {
+public class MultipleChoiceQuestionsResult {
 
     public static int roundNumber;
     public static int randNumber;

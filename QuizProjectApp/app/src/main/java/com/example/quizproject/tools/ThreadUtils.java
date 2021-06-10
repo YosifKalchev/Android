@@ -1,4 +1,4 @@
-package com.example.quizproject;
+package com.example.quizproject.tools;
 
 import android.os.Handler;
 import android.os.Looper;
@@ -10,20 +10,19 @@ import java.util.concurrent.Executors;
 
 public class ThreadUtils {
 
-    private static ExecutorService instance;
+    private static ExecutorService exServiceInstance;
     private static Handler handlerInstance;
 
-    public static ExecutorService executorService() {
-        if(instance == null) instance = Executors.newFixedThreadPool(4);
-        return instance;
+    public static ExecutorService getExServiceInstance() {
+        if(exServiceInstance == null) exServiceInstance = Executors.newFixedThreadPool(4);
+        return exServiceInstance;
     }
 
-    public static Handler getInstance() {
+    public static Handler getHandlerInstance() {
         if(handlerInstance == null) handlerInstance = HandlerCompat.createAsync(Looper.getMainLooper());
         return handlerInstance;
     }
 
     private ThreadUtils() {
-
     }
 }

@@ -12,7 +12,6 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
     }
 
-    //todo create the screens: GAME, PLAY-GAME, LEADERBOARD
-    //TODO Create floating button and local database
+    //todo Create local database
 
 }

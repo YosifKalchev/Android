@@ -43,7 +43,7 @@
         android:label="GameFragment" >
         <action
             android:id="@+id/action_gameInfoFragment_to_playGameFragment"
-            app:destination="@id/playGameFragment" />
+            app:destination="@id/addPlayerFragment" />
         <action
             android:id="@+id/action_gameInfoFragment_to_gameHistoryFragment"
             app:destination="@id/gameHistoryFragment" />
@@ -58,7 +58,11 @@
         tools:layout="@layout/fragment_create_game"
         android:id="@+id/createGameFragment"
         android:name="com.example.quizproject.fragments.CreateGameFragment"
-        android:label="CreateGameFragment" />
+        android:label="CreateGameFragment" >
+        <action
+            android:id="@+id/action_createGameFragment_to_mainFragment"
+            app:destination="@id/mainFragment" />
+    </fragment>
     <fragment
         tools:layout="@layout/fragment_game_history"
         android:id="@+id/gameHistoryFragment"
@@ -70,16 +74,13 @@
         android:name="com.example.quizproject.fragments.GameLeaderboardFragment"
         android:label="GameLeaderboardFragment" />
     <fragment
-        tools:layout="@layout/fragment_play_game"
-        android:id="@+id/playGameFragment"
-        android:name="com.example.quizproject.fragments.PlayGameFragment"
+        tools:layout="@layout/fragment_add_player"
+        android:id="@+id/addPlayerFragment"
+        android:name="com.example.quizproject.fragments.AddPlayerFragment"
         android:label="PlayGameFragment" >
         <action
-            android:id="@+id/action_playGameFragment_to_prepareQuestionFragment"
+            android:id="@+id/action_addPlayerFragment_to_prepareQuestionFragment"
             app:destination="@id/prepareQuestionFragment" />
-        <action
-            android:id="@+id/action_playGameFragment_to_questionFragment"
-            app:destination="@id/questionFragment" />
     </fragment>
     <fragment
         tools:layout="@layout/fragment_question_prepare"

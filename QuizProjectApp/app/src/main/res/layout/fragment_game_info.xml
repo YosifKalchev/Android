@@ -62,7 +62,7 @@
         app:layout_constraintTop_toBottomOf="@+id/linearLayoutCompat">
 
         <TextView
-            android:id="@+id/txtDifficulty"
+            android:id="@+id/txtAnswerOption4"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
@@ -244,7 +244,7 @@
     </androidx.appcompat.widget.LinearLayoutCompat>
 
     <Button
-        android:id="@+id/btnPlayGame"
+        android:id="@+id/btnCreateGame"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"

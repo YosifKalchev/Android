@@ -4,11 +4,14 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.Spinner;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
+import androidx.navigation.Navigation;
 
 import com.example.quizproject.R;
 
@@ -33,7 +36,7 @@ public class CreateGameFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
         viewInit(view);
-
+        setUpToolbar(view);
 
         //todo set adapter for spinner and give it list of categories via API call
     }
@@ -42,5 +45,20 @@ public class CreateGameFragment extends Fragment {
         Spinner spnFirstCategories = view.findViewById(R.id.spnFirstCategorySelector);
         Spinner spnSecondCategories = view.findViewById(R.id.spnSecondCategorySelector);
         Spinner spnDifficultySelector = view.findViewById(R.id.spnGameDifficultySelector);
+        Button btnCreateGame = view.findViewById(R.id.btnCreateGame);
+
+        //todo set spinner values
+        //todo set button clickListener and add the created game to GameRepository
+    }
+
+    private void setUpToolbar(@NotNull View view) {
+
+        Toolbar toolbar = view.findViewById(R.id.toolbarGameTab);
+        toolbar.setTitle("Create game");
+        toolbar.setNavigationOnClickListener(v -> {
+            Navigation.findNavController(v).navigate(R.id.action_createGameFragment_to_mainFragment);
+
+        });
+        toolbar.inflateMenu(R.menu.menu_game_tb);
     }
 }

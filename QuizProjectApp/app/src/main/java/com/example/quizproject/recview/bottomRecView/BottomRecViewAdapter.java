@@ -1,4 +1,4 @@
-package com.example.quizproject.bottomRecView;
+package com.example.quizproject.recview.bottomRecView;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -8,6 +8,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.quizproject.R;
+import com.example.quizproject.models.Game;
 
 import org.jetbrains.annotations.NotNull;
 
@@ -16,9 +17,9 @@ import java.util.List;
 
 public class BottomRecViewAdapter extends RecyclerView.Adapter<BottomViewHolder> {
 
-    private final List<String> data;
+    private final List<Game> data;
 
-    public BottomRecViewAdapter(List<String> data) {
+    public BottomRecViewAdapter(List<Game> data) {
         this.data = data;
     }
 
@@ -35,8 +36,9 @@ public class BottomRecViewAdapter extends RecyclerView.Adapter<BottomViewHolder>
 
     @Override
     public void onBindViewHolder(@NonNull @NotNull BottomViewHolder holder, int position) {
-        String title = data.get(position);
-        holder.createSingleRow(title);
+
+        Game game = data.get(position);
+        holder.bindData(game);
         holder.transferData(data);
 
     }

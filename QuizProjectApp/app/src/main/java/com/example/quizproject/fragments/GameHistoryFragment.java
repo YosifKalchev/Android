@@ -8,7 +8,9 @@ import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
+import androidx.navigation.Navigation;
 
 import com.example.quizproject.R;
 
@@ -21,6 +23,8 @@ public class GameHistoryFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull @NotNull View view, @Nullable @org.jetbrains.annotations.Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+
+        setUpToolbar(view);
     }
 
     @Nullable
@@ -36,5 +40,18 @@ public class GameHistoryFragment extends Fragment {
     }
 
 
-    //todo Setup the recycler view
+    //todo Create list of when the games is played and add the date after each game
+    //todo show the list values on the screen
+
+
+    private void setUpToolbar(@NotNull View view) {
+
+        Toolbar toolbar = view.findViewById(R.id.toolbarGameTab);
+        toolbar.setTitle("Create game");
+        toolbar.setNavigationOnClickListener(v -> {
+            Navigation.findNavController(v).navigate(R.id.action_createGameFragment_to_mainFragment);
+
+        });
+        toolbar.inflateMenu(R.menu.menu_game_tb);
+    }
 }

@@ -1,4 +1,4 @@
-package com.example.quiz_game_project.data.remote.questions.models;
+package com.example.quizproject.models;
 
 public class Category {
 

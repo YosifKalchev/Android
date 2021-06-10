@@ -1,6 +1,6 @@
-package com.example.quiz_game_project.data;
+package com.example.quizproject.repos;
 
-import com.example.quiz_game_project.data.remote.questions.models.Category;
+import com.example.quizproject.models.Category;
 
 public class CategoryRepository {
 

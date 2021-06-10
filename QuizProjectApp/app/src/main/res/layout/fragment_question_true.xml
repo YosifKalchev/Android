@@ -23,7 +23,7 @@
         app:layout_goneMarginTop="40dp" />
 
     <TextView
-        android:id="@+id/txtWrongAnswers"
+        android:id="@+id/txtAnswerOption2"
         android:layout_width="match_parent"
         android:layout_height="40dp"
         android:layout_marginStart="20dp"
@@ -33,7 +33,7 @@
         android:text="asdasdasdasdasd"
         android:textAlignment="center"
         android:textColor="@color/pc_light_gray"
-        app:layout_constraintBottom_toTopOf="@+id/txtCategory"
+        app:layout_constraintBottom_toTopOf="@+id/txtAnswerOption3"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -42,7 +42,7 @@
 
     <TextView
         android:text="@string/no"
-        android:id="@+id/txtCategory"
+        android:id="@+id/txtAnswerOption3"
         android:layout_width="match_parent"
         android:layout_height="40dp"
         android:layout_marginStart="20dp"
@@ -50,7 +50,7 @@
         android:background="@color/pc_dark_gray"
         android:padding="20dp"
         android:textColor="@color/pc_light_gray"
-        app:layout_constraintBottom_toTopOf="@+id/txtDifficulty"
+        app:layout_constraintBottom_toTopOf="@+id/txtAnswerOption4"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -58,7 +58,7 @@
         app:layout_constraintVertical_bias="0.927" />
 
     <TextView
-        android:id="@+id/txtDifficulty"
+        android:id="@+id/txtAnswerOption4"
         android:layout_width="match_parent"
         android:layout_height="40dp"
         android:layout_marginStart="20dp"

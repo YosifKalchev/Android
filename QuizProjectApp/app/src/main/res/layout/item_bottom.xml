@@ -4,29 +4,34 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_margin="12dp"
-    android:background="@drawable/custom_background"
-    >
+    android:background="@color/pc_medium_gray">
+
+    <ImageView
+        android:padding="8dp"
+        android:src="@drawable/ic_game_base"
+        android:id="@+id/imgBtmLogo"
+        android:layout_height="match_parent"
+        android:layout_width="wrap_content"
+        android:contentDescription="@string/todo" />
 
     <TextView
-        android:id="@+id/txtTitleBottom"
+        android:padding="8dp"
+        android:textSize="20sp"
+        android:textColor="@color/pc_dark_gray"
+        android:textAlignment="textStart"
+        android:id="@+id/txtBtmGameTitle"
         android:layout_width="0dp"
         android:layout_height="match_parent"
-        android:layout_marginTop="12dp"
-        android:layout_weight="1"
-        android:background="@color/purple_200"
-        android:padding="8dp"
-        android:textColor="@color/black"
-        android:textSize="20sp" />
+        android:layout_weight="1"/>
 
     <TextView
-        android:id="@+id/txtGradeBottom"
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:layout_marginTop="12dp"
-        android:background="@color/purple_700"
         android:padding="8dp"
-        android:textAlignment="center"
-        android:textColor="@color/black"
-        android:textSize="20sp" />
+        android:textSize="20sp"
+        android:textColor="@color/pc_dark_gray"
+        android:textAlignment="textEnd"
+        android:id="@+id/txtBtmDate"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"/>
+
 
 </LinearLayout>

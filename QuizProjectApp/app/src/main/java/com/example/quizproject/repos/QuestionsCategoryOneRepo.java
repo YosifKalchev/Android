@@ -1,11 +1,11 @@
-package com.example.quiz_game_project.data;
+package com.example.quizproject.repos;
 
-import com.example.quiz_game_project.data.remote.questions.models.Category;
-import com.example.quiz_game_project.data.remote.questions.models.Result;
+
+import com.example.quizproject.models.Result;
 
 public class QuestionsCategoryOneRepo {
 
-    private Result[] categotyOneQuestions;
+    private Result[] categoryOneQuestions;
 
     private static QuestionsCategoryOneRepo instance;
 
@@ -15,26 +15,26 @@ public class QuestionsCategoryOneRepo {
     }
 
     private QuestionsCategoryOneRepo() {
-        this.categotyOneQuestions = new Result[]{};
+        this.categoryOneQuestions = new Result[]{};
     }
 
-    public Result[] getCategotyOneQuestions() {
-        return categotyOneQuestions;
+    public Result[] categoryOneQuestions() {
+        return categoryOneQuestions;
     }
 
-    public void setCategotyOneQuestions(Result[] categotyOneQuestions) {
-        this.categotyOneQuestions = categotyOneQuestions;
+    public void setCategoryOneQuestions(Result[] categoryOneQuestions) {
+        this.categoryOneQuestions = categoryOneQuestions;
     }
 
     public String getQuestion(int i){
-        return categotyOneQuestions[i].question;
+        return categoryOneQuestions[i].question;
     }
 
     public String[] getIncorrectAnswers(int i){
-        return categotyOneQuestions[i].incorrect_answers;
+        return categoryOneQuestions[i].incorrect_answers;
     }
 
     public String getCorrectAnswer(int i){
-        return categotyOneQuestions[i].correct_answer;
+        return categoryOneQuestions[i].correct_answer;
     }
 }

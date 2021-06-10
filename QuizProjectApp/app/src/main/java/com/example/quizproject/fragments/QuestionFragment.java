@@ -12,6 +12,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.navigation.Navigation;
 
 import com.example.quizproject.R;
 import com.example.quizproject.remote.models.QuotesApi.GenresResponseModel;
@@ -34,15 +35,17 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class QuestionFragment extends Fragment {
 
-
+//todo use the correct fields
     private TextView txtQuestionField;
     private TextView txtCorrectAnswer;
     private TextView txtWrongAnswers;
     private TextView txtDifficulty;
     private TextView txtCategory;
     private Button btnGenerateQuestion;
-    private QuotesApiService serviceQuotes;
     private QuizApiService serviceQuiz;
+    private TextView txtAnswer2;
+    private TextView txtAnswer3;
+    private TextView txtAnswer4;
 
     @Nullable
     @org.jetbrains.annotations.Nullable
@@ -65,23 +68,26 @@ public class QuestionFragment extends Fragment {
 
         //todo move this in question fragment
         initView(view);
-        loadQuestionFromApi();
+        loadQuestionFromApi(view);
 
-        btnGenerateQuestion.setOnClickListener(view1 -> loadQuestionFromApi());
+//        btnGenerateQuestion.setOnClickListener(view1 -> loadQuestionFromApi());
     }
 
     private void initView(View view) {
 
        //todo use the correct fields for variables
 
-//        txtQuestionField = view.findViewById(R.id.txtQuestionField);
-//        txtCorrectAnswer = view.findViewById(R.id.txtCorrectAnswer);
-//        txtWrongAnswers = view.findViewById(R.id.txtWrongAnswers);
+        txtQuestionField = view.findViewById(R.id.txtQuestionField);
+        txtCorrectAnswer = view.findViewById(R.id.txtCorrectAnswer);
+        txtAnswer2 = view.findViewById(R.id.txtAnswerOption2);
+        txtAnswer3 = view.findViewById(R.id.txtAnswerOption3);
+        txtAnswer4 = view.findViewById(R.id.txtAnswerOption4);
+
 //        txtDifficulty = view.findViewById(R.id.txtDifficulty);
 //        txtCategory = view.findViewById(R.id.txtCategory);
 //        btnGenerateQuestion = view.findViewById(R.id.btnGenerateQuestion);
 
-        setupQuotesRetrofit();
+
         setupQuizRetrofit();
     }
 
@@ -94,17 +100,7 @@ public class QuestionFragment extends Fragment {
         serviceQuiz = retrofit.create(QuizApiService.class);
     }
 
-    private void setupQuotesRetrofit() {
-        Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("https://quote-garden.herokuapp.com/api/v3/")
-                .addConverterFactory(GsonConverterFactory.create())
-                .build();
-
-        serviceQuotes = retrofit.create(QuotesApiService.class);
-    }
-
-
-    private void loadQuestionFromApi() {
+    private void loadQuestionFromApi(View view) {
 
 
             serviceQuiz.getQuestion().enqueue(new Callback<ResponseModelForQuestions>() {
@@ -112,15 +108,21 @@ public class QuestionFragment extends Fragment {
                 public void onResponse(@NotNull Call<ResponseModelForQuestions> call, @NotNull Response<ResponseModelForQuestions> response) {
                     if (response.isSuccessful()) {
                         Log.e("MainFragment", "Call Succeeded");
-//                        ResponseModelForQuestions qrm = response.body();
-//                        for (int i = 0; i < Objects.requireNonNull(qrm).results.length; i++) {
-//                            Log.e("MainFragment", "Question:"+qrm.results[i].getCorrect_answer());
-//                            txtQuestionField.setText(qrm.results[i].getQuestion());
+                        ResponseModelForQuestions qrm = response.body();
+                        for (int i = 0; i < Objects.requireNonNull(qrm).results.length; i++) {
+                            Log.e("MainFragment", "Question:"+qrm.results[i].getCorrect_answer());
+
+                            txtQuestionField.setText(qrm.results[i].getQuestion());
+                            txtCorrectAnswer.setText(qrm.results[i].getCorrect_answer());
+
+
+
+//todo fix answer fields not show the text inserted
+
 //                            txtCategory.setText(qrm.results[i].getCategory());
-//                            txtCorrectAnswer.setText(qrm.results[i].getCorrect_answer());
 //                            txtWrongAnswers.setText(Arrays.toString(qrm.results[i].getIncorrect_answers()));
 //                            txtDifficulty.setText(qrm.results[i].getDifficulty());
-//                        }
+                        }
                     } else {
                         Log.e("MainFragment", "Call Failed");
                     }
@@ -131,32 +133,6 @@ public class QuestionFragment extends Fragment {
                     Log.e("MainFragment", "Call Failed", t);
                 }
             });
-
-
-    }
-
-    private void loadQuotesFromApi() {
-
-        serviceQuotes.getAllGenres().enqueue(new Callback<GenresResponseModel>() {
-            @Override
-            public void onResponse(@NotNull Call<GenresResponseModel> call, @NotNull Response<GenresResponseModel> response) {
-                if (response.isSuccessful()) {
-                    GenresResponseModel responseModel = response.body();
-                    for (int i = 0; i < Objects.requireNonNull(responseModel).data.length; i++) {
-                        Log.e("MainFragment", "Genre:"+responseModel.data[i]);
-                    }
-                    txtQuestionField.setText(responseModel.data[12]);
-                } else {
-                    Log.e("MainFragment", "Call Failed");
-                }
-            }
-
-            @Override
-            public void onFailure(@NotNull Call<GenresResponseModel> call, @NotNull Throwable t) {
-                Log.e("MainFragment", "Call Failed", t);
-            }
-        });
-
 
 
     }
