@@ -8,23 +8,23 @@
     android:background="@color/app_palette_6">
 
     <ImageView
-        android:id="@+id/imgRushHour"
+        android:id="@+id/imgPoster"
         android:layout_width="300dp"
         android:layout_height="300dp"
         android:layout_margin="16dp"
         android:layout_marginBottom="16dp"
         android:padding="4dp"
         android:scaleType="fitXY"
-        app:layout_constraintBottom_toTopOf="@+id/txtRushHour"
+        app:layout_constraintBottom_toTopOf="@+id/txtName"
         app:layout_constraintDimensionRatio="1:1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/poster_rush_hour"
+        tools:srcCompat="@drawable/poster_avatar"
         tools:ignore="ContentDescription" />
 
     <TextView
-        android:id="@+id/txtRushHour"
+        android:id="@+id/txtName"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_margin="16dp"
@@ -32,14 +32,14 @@
         android:scrollbarAlwaysDrawVerticalTrack="true"
         android:textColor="@color/app_palette_9"
         android:textSize="20sp"
-        app:layout_constraintBottom_toTopOf="@+id/btmNavRushHour"
+        app:layout_constraintBottom_toTopOf="@+id/btmNav"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imgRushHour"
+        app:layout_constraintTop_toBottomOf="@+id/imgPoster"
         app:layout_constraintVertical_weight="1" />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/btmNavRushHour"
+        android:id="@+id/btmNav"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/app_palette_9"
@@ -50,7 +50,6 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtRushHour"
+        app:layout_constraintTop_toBottomOf="@+id/txtName"
         app:menu="@menu/menu_bottom" />
 </androidx.constraintlayout.widget.ConstraintLayout>
-

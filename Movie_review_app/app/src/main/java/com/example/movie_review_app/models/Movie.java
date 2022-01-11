@@ -1,10 +1,13 @@
 package com.example.movie_review_app.models;
 
+import android.os.Parcel;
+import android.os.Parcelable;
+
 import com.example.movie_review_app.constants.Crew;
 import com.example.movie_review_app.constants.Grade;
 import com.example.movie_review_app.constants.Review;
 
-public class Movie {
+public class Movie implements Parcelable {
 
     private final String name;
     private final int id;
@@ -12,6 +15,29 @@ public class Movie {
     private final Review review;
     private final Grade grade;
     private final Crew crew;
+    private final int imageRes;
+
+    protected Movie(Parcel in) {
+        name = in.readString();
+        id = in.readInt();
+        yearOfPublish = in.readInt();
+        review = (Review) in.readSerializable();
+        grade = (Grade) in.readSerializable();
+        crew = (Crew) in.readSerializable();
+        imageRes = in.readInt();
+    }
+
+    public static final Creator<Movie> CREATOR = new Creator<Movie>() {
+        @Override
+        public Movie createFromParcel(Parcel in) {
+            return new Movie(in);
+        }
+
+        @Override
+        public Movie[] newArray(int size) {
+            return new Movie[size];
+        }
+    };
 
     public String getName() {
         return name;
@@ -37,12 +63,35 @@ public class Movie {
         return crew;
     }
 
-    public Movie(String name, int yearOfPublish, int id, Review review, Grade grade, Crew crew) {
+    public int getImageRes() {
+        return imageRes;
+    }
+
+    public Movie(String name, int yearOfPublish, int id, Review review, Grade grade, Crew crew, int imageRes) {
         this.name = name;
         this.yearOfPublish = yearOfPublish;
         this.review = review;
         this.grade = grade;
         this.crew = crew;
         this.id = id;
+        this.imageRes = imageRes;
+    }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+
+
+    @Override
+    public void writeToParcel(Parcel parcel, int i) {
+        parcel.writeString(name);
+        parcel.writeInt(id);
+        parcel.writeInt(yearOfPublish);
+        parcel.writeSerializable(review);
+        parcel.writeSerializable(grade);
+        parcel.writeSerializable(crew);
+        parcel.writeInt(imageRes);
     }
 }

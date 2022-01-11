@@ -14,9 +14,7 @@ import androidx.fragment.app.Fragment;
 import androidx.navigation.Navigation;
 
 import com.example.movie_review_app.R;
-import com.example.movie_review_app.constants.BundleItem;
-
-import java.util.ArrayList;
+import com.example.movie_review_app.models.Movie;
 
 public class NavigationFragment extends Fragment {
 
@@ -39,27 +37,27 @@ public class NavigationFragment extends Fragment {
     }
 
     @SuppressLint("SetTextI18n")
-    protected void showPublishScreen(TextView txtView, ArrayList<String> movieInfo) {
+    protected void showPublishScreen(TextView txtView, Movie movieInfo) {
         txtView.setMovementMethod(null);
-        txtView.setText("The movie has been published in "+ movieInfo.get(BundleItem.YEAR_OF_PUBLISH.getValue()) +
-                ".\nThe global grade for the movie is: "+ movieInfo.get(BundleItem.GRADE.getValue())+
-                ".\nThe ID of " + movieInfo.get(BundleItem.NAME.getValue()) +" movie  for this app is: " +
-                ""+movieInfo.get(BundleItem.ID.getValue()));
+        txtView.setText("The movie has been published in "+ movieInfo.getYearOfPublish() +
+                ".\nThe global grade for the movie is: "+ movieInfo.getGrade().toString()+
+                ".\nThe ID of " + movieInfo.getName() +" movie  for this app is: " +
+                ""+movieInfo.getId());
     }
 
-    protected void showReviewScreen(TextView txtView, ArrayList<String> movieInfo) {
+    protected void showReviewScreen(TextView txtView, Movie movieInfo) {
         txtView.setMovementMethod(new ScrollingMovementMethod());
-        txtView.setText(movieInfo.get(BundleItem.REVIEW.getValue()));
+        txtView.setText(movieInfo.getReview().toString());
     }
 
-    protected void showCrewScreen(TextView txtView, ArrayList<String> movieInfo) {
+    protected void showCrewScreen(TextView txtView, Movie movieInfo) {
         txtView.setMovementMethod(null);
-        txtView.setText(movieInfo.get(BundleItem.CREW.getValue()));
+        txtView.setText(movieInfo.getCrew().toString());
     }
 
-    protected void showHomeScreen(View view, int direction) {
+    protected void showHomeScreen(View view) {
 
-        Navigation.findNavController(view).navigate(direction);
+        Navigation.findNavController(view).navigate(R.id.action_movieFragment_to_startFragment);
 
     }
 }

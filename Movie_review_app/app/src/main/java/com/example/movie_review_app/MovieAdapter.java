@@ -24,17 +24,17 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieViewHolder> {
     public MovieViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View singleElement =
                 LayoutInflater
-                .from(parent.getContext())
-                .inflate(R.layout.movie_item, parent, false);
+                        .from(parent.getContext())
+                        .inflate(R.layout.movie_item, parent, false);
         return new MovieViewHolder(singleElement);
 
     }
 
     @Override
     public void onBindViewHolder(@NonNull MovieViewHolder holder, int position) {
-            Movie movie = data.get(position);
-            holder.createSingleRow(movie, position);
-            holder.transferData(data);
+        Movie movie = data.get(position);
+        holder.createSingleRow(movie, position);
+        holder.transferData(data);
     }
 
     @Override

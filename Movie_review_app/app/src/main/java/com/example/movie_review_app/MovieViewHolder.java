@@ -9,11 +9,9 @@ import androidx.annotation.NonNull;
 import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.movie_review_app.constants.Direction;
+
 import com.example.movie_review_app.models.Movie;
 
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 public class MovieViewHolder extends RecyclerView.ViewHolder {
@@ -41,38 +39,16 @@ public class MovieViewHolder extends RecyclerView.ViewHolder {
 
 
         itemView.setOnClickListener(v -> {
-
-            switch (position) {
-                case 0 : navigateTo(0, Direction.START_TO_TROY); break;
-                case 1 : navigateTo(1, Direction.START_TO_AVATAR); break;
-                case 2 : navigateTo(2, Direction.START_TO_TAKEN); break;
-                case 3 : navigateTo(3, Direction.START_TO_MORTAL_KOMBAT); break;
-                case 4 : navigateTo(4, Direction.START_TO_BAD_BOYS); break;
-                case 5 : navigateTo(5, Direction.START_TO_GODZILLA); break;
-                case 6 : navigateTo(6, Direction.START_TO_ZACK_SNYDER); break;
-                case 7 : navigateTo(7, Direction.START_TO_RUSH_HOUR_3); break;
-                case 8 : navigateTo(8, Direction.START_TO_CLASH_OF_TITANS); break;
-                case 9 : navigateTo(9, Direction.START_TO_GLITTER); break;
-            }
+            navigateTo(position);
         });
     }
 
 
-    private void navigateTo(int position, Direction direction) {
+    private void navigateTo(int position) {
 
-        String name = data.get(position).getName();
-        String crew = data.get(position).getCrew().toString();
-        String review = data.get(position).getReview().toString();
-        String yearOfPublish = String.valueOf(data.get(position).getYearOfPublish());
-        String grade = data.get(position).getGrade().toString();
-        String id = String.valueOf(data.get(position).getId());
+        bundle.putParcelable("selectedMovie", data.get(position));
 
-
-        ArrayList<String> transferItems = new ArrayList<>(
-                Arrays.asList(name, crew, review, yearOfPublish, grade, id));
-        bundle.putStringArrayList("items", transferItems);
-
-        Navigation.findNavController(itemView).navigate(direction.getValue(), bundle);
+        Navigation.findNavController(itemView).navigate(R.id.action_startFragment_to_movieFragment, bundle);
     }
 
 

@@ -22,125 +22,17 @@
         android:name="com.example.movie_review_app.navigation_fragments.StartFragment"
         android:label="StartFragment" >
         <action
-            android:id="@+id/action_startFragment_to_troyFragment"
-            app:destination="@id/troyFragment" />
-        <action
-            android:id="@+id/action_startFragment_to_avatarFragment"
-            app:destination="@id/avatarFragment" />
-        <action
-            android:id="@+id/action_startFragment_to_badBoysFragment"
-            app:destination="@id/badBoysFragment" />
-        <action
-            android:id="@+id/action_startFragment_to_mortalKombatFragment"
-            app:destination="@id/mortalKombatFragment" />
-        <action
-            android:id="@+id/action_startFragment_to_takenFragment"
-            app:destination="@id/takenFragment" />
-        <action
-            android:id="@+id/action_startFragment_to_titansFragment"
-            app:destination="@id/titansFragment" />
-        <action
-            android:id="@+id/action_startFragment_to_glitterFragment"
-            app:destination="@id/glitterFragment" />
-        <action
-            android:id="@+id/action_startFragment_to_rushHourFragment"
-            app:destination="@id/rushHourFragment" />
-        <action
-            android:id="@+id/action_startFragment_to_godzillaFragment"
-            app:destination="@id/godzillaFragment" />
-        <action
-            android:id="@+id/action_startFragment_to_zackFragment"
-            app:destination="@id/zackFragment" />
+            android:id="@+id/action_startFragment_to_movieFragment"
+            app:destination="@id/movieFragment" />
 
     </fragment>
     <fragment
-        tools:layout="@layout/fragment_troy"
-        android:id="@+id/troyFragment"
-        android:name="com.example.movie_review_app.movie_fragments.TroyFragment"
-        android:label="TroyFragment" >
+        tools:layout="@layout/fragment_movie"
+        android:id="@+id/movieFragment"
+        android:name="com.example.movie_review_app.movie_fragments.MovieFragment"
+        android:label="MovieFragment" >
         <action
-            android:id="@+id/action_troyFragment_to_startFragment"
-            app:destination="@id/startFragment" />
-    </fragment>
-    <fragment
-        tools:layout="@layout/fragment_avatar"
-        android:id="@+id/avatarFragment"
-        android:name="com.example.movie_review_app.movie_fragments.AvatarFragment"
-        android:label="AvatarFragment" >
-        <action
-            android:id="@+id/action_avatarFragment_to_startFragment"
-            app:destination="@id/startFragment" />
-    </fragment>
-    <fragment
-        tools:layout="@layout/fragment_bad_boys"
-        android:id="@+id/badBoysFragment"
-        android:name="com.example.movie_review_app.movie_fragments.BadBoysFragment"
-        android:label="BadBoysFragment" >
-        <action
-            android:id="@+id/action_badBoysFragment_to_startFragment"
-            app:destination="@id/startFragment" />
-    </fragment>
-    <fragment
-        tools:layout="@layout/fragment_mortal_kombat"
-        android:id="@+id/mortalKombatFragment"
-        android:name="com.example.movie_review_app.movie_fragments.MortalKombatFragment"
-        android:label="MortalKombatFragment" >
-        <action
-            android:id="@+id/action_mortalKombatFragment_to_startFragment"
-            app:destination="@id/startFragment" />
-    </fragment>
-    <fragment
-        tools:layout="@layout/fragment_taken"
-        android:id="@+id/takenFragment"
-        android:name="com.example.movie_review_app.movie_fragments.TakenFragment"
-        android:label="TakenFragment" >
-        <action
-            android:id="@+id/action_takenFragment_to_startFragment"
-            app:destination="@id/startFragment" />
-    </fragment>
-    <fragment
-        tools:layout="@layout/fragment_glitter"
-        android:id="@+id/glitterFragment"
-        android:name="com.example.movie_review_app.movie_fragments.GlitterFragment"
-        android:label="GlitterFragment" >
-        <action
-            android:id="@+id/action_glitterFragment_to_startFragment"
-            app:destination="@id/startFragment" />
-    </fragment>
-    <fragment
-        tools:layout="@layout/fragment_godzilla"
-        android:id="@+id/godzillaFragment"
-        android:name="com.example.movie_review_app.movie_fragments.GodzillaFragment"
-        android:label="GodzillaFragment" >
-        <action
-            android:id="@+id/action_godzillaFragment_to_startFragment"
-            app:destination="@id/startFragment" />
-    </fragment>
-    <fragment
-        tools:layout="@layout/fragment_rush_hour"
-        android:id="@+id/rushHourFragment"
-        android:name="com.example.movie_review_app.movie_fragments.RushHourFragment"
-        android:label="RushHourFragment" >
-        <action
-            android:id="@+id/action_rushHourFragment_to_startFragment"
-            app:destination="@id/startFragment" />
-    </fragment>
-    <fragment
-        tools:layout="@layout/fragment_titans"
-        android:id="@+id/titansFragment"
-        android:name="com.example.movie_review_app.movie_fragments.TitansFragment"
-        android:label="TitansFragment" >
-        <action
-            android:id="@+id/action_titansFragment_to_startFragment"
-            app:destination="@id/startFragment" />
-    </fragment>
-    <fragment
-        tools:layout="@layout/fragment_zack"
-        android:id="@+id/zackFragment"
-        android:name="com.example.movie_review_app.movie_fragments.ZackFragment"
-        android:label="ZackFragment" >
-        <action
-            android:id="@+id/action_zackFragment_to_startFragment"
+            android:id="@+id/action_movieFragment_to_startFragment"
             app:destination="@id/startFragment" />
     </fragment>
 </navigation>
