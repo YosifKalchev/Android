@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/pc_light_gray">
+
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbarGameTab"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintHorizontal_weight="1"
+        android:layout_marginBottom="253dp"
+        android:background="@color/pc_dark_gray"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        app:navigationIcon="@drawable/ic_arrow_back"
+        app:titleTextColor="@color/pc_light_gray"/>
+
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="12dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@+id/btnCreateGame"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbarGameTab">
+
+        <TextView
+            android:layout_marginBottom="24dp"
+            android:id="@+id/txtSelectIcon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:paddingStart="@dimen/padding_medium"
+            android:text="@string/select_icon"
+            android:textSize="@dimen/text_medium"
+            tools:ignore="RtlSymmetry" />
+
+        <TextView
+            android:layout_marginBottom="12dp"
+            android:id="@+id/txtSelectGameDifficulty"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:paddingStart="@dimen/padding_medium"
+            android:text="@string/select_game_difficulty"
+            android:textSize="@dimen/text_medium"
+            tools:ignore="RtlSymmetry" />
+
+
+        <Spinner
+            android:layout_marginBottom="24dp"
+            android:id="@+id/spnGameDifficultySelector"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintVertical_bias="0.742" />
+
+        <TextView
+            android:layout_marginBottom="12dp"
+            android:id="@+id/txtSelectCategory1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:paddingStart="@dimen/padding_medium"
+            android:text="@string/select_categories"
+            android:textSize="@dimen/text_medium"
+            tools:ignore="RtlSymmetry" />
+
+
+        <Spinner
+            android:layout_marginBottom="12dp"
+            android:id="@+id/spnFirstCategorySelector"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <Spinner
+            android:id="@+id/spnSecondCategorySelector"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <Button
+        android:id="@+id/btnCreateGame"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:padding="10dp"
+        android:text="@string/create"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
