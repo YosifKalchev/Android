@@ -18,5 +18,18 @@
         tools:layout="@layout/fragment_players_setup"
         android:id="@+id/playerSetupFragment"
         android:name="com.example.tictactoegame.PlayerSetupFragment"
-        android:label="PlayerSetupFragment" />
+        android:label="PlayerSetupFragment" >
+        <action
+            android:id="@+id/action_playerSetupFragment_to_gameDisplayFragment"
+            app:destination="@id/gameDisplayFragment" />
+    </fragment>
+    <fragment
+        tools:layout="@layout/fragment_game_display"
+        android:id="@+id/gameDisplayFragment"
+        android:name="com.example.tictactoegame.GameDisplayFragment"
+        android:label="GameDisplayFragment" >
+        <action
+            android:id="@+id/action_gameDisplayFragment_to_startFragment"
+            app:destination="@id/startFragment" />
+    </fragment>
 </navigation>

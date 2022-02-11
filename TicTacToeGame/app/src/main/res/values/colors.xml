@@ -14,4 +14,6 @@
     <color name="color_main1">#134DAA</color>
     <color name="color_main2">#6BDCF2</color>
     <color name="color_main3">#D9E8E7</color>
+    <color name="color_player2">#0B5100</color>
+    <color name="color_player1">#B30000</color>
 </resources>
