@@ -17,10 +17,14 @@ public class TicTacToeBoard extends View {
 
     public static final int DRAW_O = 0;
     public static final int DRAW_X = 1;
+
     private final int boardColor;
     private final int XColor;
     private final int OColor;
     private final int winningLineColor;
+
+    private boolean winningLine = false;
+
     private int cellSize = getWidth()/3;
     private final static double SPACE_VALUE = 0.2;
     private final static int BOARD_SIZE = 3;
@@ -97,15 +101,24 @@ public class TicTacToeBoard extends View {
             int row = (int) Math.ceil(y/cellSize);
             int col = (int) Math.ceil(x/cellSize);
 
-            if (game.updateGameBoard(row, col)) {
-                invalidate();
 
-                if (game.getPlayer() % 2 == 0) {
-                    game.setPlayer(game.getPlayer() - 1);
-                } else {
-                    game.setPlayer(game.getPlayer() + 1);
+            if (!winningLine) {
+                if (game.updateGameBoard(row, col)) {
+                    invalidate();
+
+                    if(game.hasWinner()) {
+                        winningLine = true;
+                        invalidate();
+                    }
+
+                    if (game.getPlayer() % 2 == 0) {
+                        game.setPlayer(game.getPlayer() - 1);
+                    } else {
+                        game.setPlayer(game.getPlayer() + 1);
+                    }
                 }
             }
+
 
             invalidate();
 
@@ -155,8 +168,21 @@ public class TicTacToeBoard extends View {
                          paint);
     }
 
+    private void drawHorizontalLine(Canvas canvas, int row, int col) {
+        canvas.drawLine(col, (row * cellSize) + (cellSize/2),
+                cellSize*BOARD_SIZE, (row * cellSize) + (cellSize/2), paint);
+    }
+
+    private void drawVerticalLine(Canvas canvas, int row, int col) {
+        canvas.drawLine(col*cellSize + cellSize/2, row,
+                col*cellSize + cellSize/2, cellSize*BOARD_SIZE, paint);
+    }
+
+    //todo negative and positive diagonals
+
     public void resetGame() {
         game.resetGame();
+        winningLine = false;
     }
 
     public void setUpGame(Button playAgain, Button home, TextView displayPlayer, String[] names) {
