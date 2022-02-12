@@ -1,4 +1,4 @@
-package com.example.tictactoegame;
+package com.example.tictactoegame.fragments;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
@@ -12,6 +12,9 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.annotation.Nullable;
+
+import com.example.tictactoegame.GameLogic;
+import com.example.tictactoegame.R;
 
 public class TicTacToeBoard extends View {
 
@@ -70,6 +73,11 @@ public class TicTacToeBoard extends View {
 
         drawGameBoard(canvas);
         drawMarkers(canvas);
+
+        if (winningLine) {
+            paint.setColor(winningLineColor);
+            drawWinningLine(canvas);
+        }
 
     }
 
@@ -168,17 +176,39 @@ public class TicTacToeBoard extends View {
                          paint);
     }
 
+
+
     private void drawHorizontalLine(Canvas canvas, int row, int col) {
-        canvas.drawLine(col, (row * cellSize) + (cellSize/2),
-                cellSize*BOARD_SIZE, (row * cellSize) + (cellSize/2), paint);
+        canvas.drawLine(col, (row * cellSize) + (float)(cellSize/2),
+                cellSize*BOARD_SIZE, (row * cellSize) + (float)(cellSize/2), paint);
     }
 
     private void drawVerticalLine(Canvas canvas, int row, int col) {
-        canvas.drawLine(col*cellSize + cellSize/2, row,
-                col*cellSize + cellSize/2, cellSize*BOARD_SIZE, paint);
+        canvas.drawLine(col*cellSize + (float)cellSize/2, row,
+                col*cellSize + (float)cellSize/2, cellSize*BOARD_SIZE, paint);
     }
 
-    //todo negative and positive diagonals
+    private void drawDiagonalPos(Canvas canvas) {
+        canvas.drawLine(0, cellSize*BOARD_SIZE,
+                cellSize*BOARD_SIZE, 0, paint);
+    }
+
+    private void drawDiagonalNeg(Canvas canvas) {
+        canvas.drawLine(0  , 0,
+                cellSize*BOARD_SIZE, cellSize*BOARD_SIZE, paint);
+    }
+
+    private void drawWinningLine(Canvas canvas) {
+        int row = game.getWinType()[0];
+        int col = game.getWinType()[1];
+
+        switch (game.getWinType()[2]) {
+            case 1 : drawHorizontalLine(canvas, row, col); break;
+            case 2 : drawVerticalLine(canvas, row, col);break;
+            case 3 : drawDiagonalNeg(canvas); break;
+            case 4 : drawDiagonalPos(canvas); break;
+        }
+    }
 
     public void resetGame() {
         game.resetGame();

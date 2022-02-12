@@ -1,5 +1,6 @@
-package com.example.tictactoegame;
+package com.example.tictactoegame.fragments;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,6 +13,8 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.Navigation;
 
+import com.example.tictactoegame.R;
+
 public class GameDisplayFragment  extends Fragment {
 
     private TicTacToeBoard ticTacToeBoard;
@@ -20,22 +23,21 @@ public class GameDisplayFragment  extends Fragment {
     private Button fBtnHome;
     private Button fBtnPlayAgain;
 
+    @SuppressLint("SetTextI18n")
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
         initViews(view);
         fBtnPlayAgain.setVisibility(View.GONE);
-        fTxtGameDisplay.setVisibility(View.GONE);
+        fBtnHome.setVisibility(View.GONE);
 
         assert getArguments() != null;
         String[] playerNames = getArguments().getStringArray("playerNames");
 
         if (playerNames != null) {
-            fTxtGameDisplay.setText((playerNames[0]));
+            fTxtGameDisplay.setText((playerNames[0] +"'s turn"));
         }
-//        String[] playerNames = {"yosko", "penchi"};
-//todo fix getting the names by debbuging
 
         fBtnPlayAgain.setOnClickListener(view1 -> onPlayButtonPlayAgainClicked());
         fBtnHome.setOnClickListener(view1 -> onButtonHomeClicked(view));

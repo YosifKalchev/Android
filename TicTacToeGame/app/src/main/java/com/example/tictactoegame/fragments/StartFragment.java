@@ -1,4 +1,4 @@
-package com.example.tictactoegame;
+package com.example.tictactoegame.fragments;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -10,6 +10,8 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.Navigation;
+
+import com.example.tictactoegame.R;
 
 public class StartFragment extends Fragment {
 

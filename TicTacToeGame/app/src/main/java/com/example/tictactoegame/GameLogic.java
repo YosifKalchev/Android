@@ -5,14 +5,18 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.example.tictactoegame.constants.WinType;
+
 public class GameLogic {
 
     private static final int BOARD_SIZE = 3;
-    private int [][] gameBoard;
+    private final int [][] gameBoard;
     private Button btnPlayAgain;
     private Button btnHome;
 
     private String[] playerNames = {"Player 1", "Player 2"};
+
+    private int[] winType = {-1, -1, -1};
 
     public void setBtnPlayAgain(Button btnPlayAgain) {
         this.btnPlayAgain = btnPlayAgain;
@@ -32,7 +36,6 @@ public class GameLogic {
 
 
     private TextView playerTurn;
-    //todo button home is visible when the game first starts
 
     //todo new Random for not always player one plays first
     private int player = 1;
@@ -81,15 +84,17 @@ public class GameLogic {
             if (gameBoard[r][0] == gameBoard[r][1]
                     && gameBoard[r][0] == gameBoard[r][2]
                     && gameBoard[r][0] != 0) {
+                winType = new int[] {r, 0, WinType.COLUMN.value};
                 isWinner = true;
                 break;
             }
         }
 
-        for (int c = 0; c < BOARD_SIZE;c++) {
-            if (gameBoard[c][0] == gameBoard[c][1]
-                    && gameBoard[c][0] == gameBoard[c][2]
-                    && gameBoard[c][0] != 0) {
+        for (int c = 0; c < BOARD_SIZE; c++) {
+            if (gameBoard[0][c] == gameBoard[1][c]
+                    && gameBoard[0][c] == gameBoard[2][c]
+                    && gameBoard[0][c] != 0) {
+                winType = new int[] {0, c, WinType.ROW.value};
                 isWinner = true;
                 break;
             }
@@ -98,12 +103,14 @@ public class GameLogic {
         if(gameBoard[0][0] == gameBoard[1][1]
                 && gameBoard[0][0] == gameBoard[2][2]
                 && gameBoard[0][0] != 0) {
+            winType = new int[] {0, 2, WinType.NEG_DIAGONAL.value};
             isWinner = true;
         }
 
         if(gameBoard[2][0] == gameBoard[1][1]
                 && gameBoard[2][0] == gameBoard[0][2]
                 && gameBoard[2][0] != 0) {
+            winType = new int[] {2, 2, WinType.POS_DIAGONAL.value};
             isWinner = true;
         }
 
@@ -158,5 +165,9 @@ public class GameLogic {
 
     public int getPlayer() {
         return player;
+    }
+
+    public int[] getWinType() {
+        return winType;
     }
 }

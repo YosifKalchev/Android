@@ -8,7 +8,7 @@
     <fragment
         tools:layout="@layout/fragment_start"
         android:id="@+id/startFragment"
-        android:name="com.example.tictactoegame.StartFragment"
+        android:name="com.example.tictactoegame.fragments.StartFragment"
         android:label="StartFragment" >
         <action
             android:id="@+id/action_startFragment_to_playerSetupFragment"
@@ -17,7 +17,7 @@
     <fragment
         tools:layout="@layout/fragment_players_setup"
         android:id="@+id/playerSetupFragment"
-        android:name="com.example.tictactoegame.PlayerSetupFragment"
+        android:name="com.example.tictactoegame.fragments.PlayerSetupFragment"
         android:label="PlayerSetupFragment" >
         <action
             android:id="@+id/action_playerSetupFragment_to_gameDisplayFragment"
@@ -26,7 +26,7 @@
     <fragment
         tools:layout="@layout/fragment_game_display"
         android:id="@+id/gameDisplayFragment"
-        android:name="com.example.tictactoegame.GameDisplayFragment"
+        android:name="com.example.tictactoegame.fragments.GameDisplayFragment"
         android:label="GameDisplayFragment" >
         <action
             android:id="@+id/action_gameDisplayFragment_to_startFragment"
