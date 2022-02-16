@@ -66,7 +66,7 @@ public class MainActivity extends AppCompatActivity {
         ibRecord.setOnClickListener(view -> {
             if(checkRecordingPermission()) {
                 if (!isRecording) {
-                    tvRecordingPath.setText("Recording..."); //todo !
+                    tvRecordingPath.setText("Recording...");
                     isRecording=true;
                     executorService.execute(() -> {
                         path = getRecordingFilePath();
@@ -100,7 +100,7 @@ public class MainActivity extends AppCompatActivity {
                      executorService.execute(() -> {
 
                          mediaRecorder.stop();
-                         tvRecordingPath.setText(""); //todo !
+                         tvRecordingPath.setText("");
                          mediaRecorder.release();
                          mediaRecorder=null;
                          playableSeconds=seconds;
@@ -141,7 +141,7 @@ public class MainActivity extends AppCompatActivity {
                     e.printStackTrace();
                 }
                 mediaPlayer.start();
-                tvRecordingPath.setText("Playing..."); //todo !
+                tvRecordingPath.setText("Playing...");
                 isPlaying = true;
                 ibPlay.setImageDrawable(ContextCompat
                         .getDrawable(MainActivity.this, R.drawable.recording_pause));
@@ -151,7 +151,7 @@ public class MainActivity extends AppCompatActivity {
 
             } else {
                 mediaPlayer.stop();
-                tvRecordingPath.setText(""); //todo !
+                tvRecordingPath.setText(""); 
                 mediaPlayer.release();
                 mediaPlayer = null;
                 mediaPlayer = new MediaPlayer();
