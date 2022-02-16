@@ -30,11 +30,7 @@ public class PlayerSetupFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
         Button fBtnConfirm = initViews(view);
-
-
-
         fBtnConfirm.setOnClickListener(view1 -> onButtonSubmitClicked(view));
-
     }
 
     private void onButtonSubmitClicked(View view) {
