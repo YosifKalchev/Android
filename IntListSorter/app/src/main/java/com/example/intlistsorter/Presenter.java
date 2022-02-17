@@ -14,8 +14,6 @@ public class Presenter {
     public Presenter() {
     }
 
-
-
     @RequiresApi(api = Build.VERSION_CODES.N)
     public static List<String> filteredList(String arrayInput, String filterInput) {
 
@@ -41,5 +39,4 @@ public class Presenter {
 
         return result;
     }
-
 }
