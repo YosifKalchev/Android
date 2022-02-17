@@ -5,8 +5,6 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
-import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -14,35 +12,31 @@ import androidx.fragment.app.Fragment;
 import androidx.navigation.Navigation;
 
 import com.example.tictactoegame.R;
+import com.example.tictactoegame.databinding.FragmentGameDisplayBinding;
 
 public class GameDisplayFragment  extends Fragment {
 
-    private TicTacToeBoard ticTacToeBoard;
-
-    private TextView fTxtGameDisplay;
-    private Button fBtnHome;
-    private Button fBtnPlayAgain;
+    FragmentGameDisplayBinding binding;
 
     @SuppressLint("SetTextI18n")
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        initViews(view);
-        fBtnPlayAgain.setVisibility(View.GONE);
-        fBtnHome.setVisibility(View.GONE);
+        binding.btnPlayAgain.setVisibility(View.GONE);
+        binding.btnHome.setVisibility(View.GONE);
 
         assert getArguments() != null;
         String[] playerNames = getArguments().getStringArray("playerNames");
 
         if (playerNames != null) {
-            fTxtGameDisplay.setText((playerNames[0] +"'s turn"));
+            binding.txtGameDisplay.setText((playerNames[0] +"'s turn"));
         }
 
-        fBtnPlayAgain.setOnClickListener(view1 -> onPlayButtonPlayAgainClicked());
-        fBtnHome.setOnClickListener(view1 -> onButtonHomeClicked(view));
+        binding.btnPlayAgain.setOnClickListener(view1 -> onPlayButtonPlayAgainClicked());
+        binding.btnHome.setOnClickListener(view1 -> onButtonHomeClicked(view));
 
-        ticTacToeBoard.setUpGame(fBtnPlayAgain, fBtnHome, fTxtGameDisplay, playerNames);
+        binding.ticTacToeBoard.setUpGame(binding.btnPlayAgain, binding.btnHome, binding.txtGameDisplay, playerNames);
     }
 
     private void onButtonHomeClicked(View view) {
@@ -50,21 +44,16 @@ public class GameDisplayFragment  extends Fragment {
     }
 
     private void onPlayButtonPlayAgainClicked() {
-        ticTacToeBoard.resetGame();
-        ticTacToeBoard.invalidate();
+        binding.ticTacToeBoard.resetGame();
+        binding.ticTacToeBoard.invalidate();
     }
 
-    private void initViews(View view) {
-        fTxtGameDisplay = view.findViewById(R.id.txtGameDisplay);
-        fBtnHome = view.findViewById(R.id.btnHome);
-        fBtnPlayAgain = view.findViewById(R.id.btnPlayAgain);
-        ticTacToeBoard = view.findViewById(R.id.ticTacToeBoard);
-
-    }
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_game_display, container, false);
+
+        binding = FragmentGameDisplayBinding.inflate(inflater, container, false);
+        return binding.getRoot();
     }
 }
