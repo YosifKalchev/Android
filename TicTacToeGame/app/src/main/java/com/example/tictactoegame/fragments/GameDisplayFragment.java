@@ -56,4 +56,10 @@ public class GameDisplayFragment  extends Fragment {
         binding = FragmentGameDisplayBinding.inflate(inflater, container, false);
         return binding.getRoot();
     }
+
+    @Override
+    public void onDestroyView() {
+        binding = null;
+        super.onDestroyView();
+    }
 }
