@@ -15,11 +15,9 @@ import android.os.Bundle;
 import android.os.Environment;
 import android.os.Handler;
 import android.view.View;
-import android.widget.ImageView;
-import android.widget.TextView;
 import android.widget.Toast;
 
-import com.airbnb.lottie.LottieAnimationView;
+import com.example.audiorecorder.databinding.ActivityMainBinding;
 
 import java.io.File;
 import java.io.IOException;
@@ -30,43 +28,36 @@ import java.util.concurrent.Executors;
 
 public class MainActivity extends AppCompatActivity {
 
+    ActivityMainBinding binding;
 
     private static final int REQUEST_AUDIO_PERM_CODE = 100;
     MediaRecorder mediaRecorder;
-    MediaPlayer mediaPlayer;
-    ImageView ibRecord;
-    ImageView ibPlay;
-    TextView tvRecordingTime;
-    TextView tvRecordingPath;
-    ImageView ivBackground;
+    MediaPlayer mediaPlayer = new MediaPlayer();
     boolean isRecording = false;
     boolean isPlaying = false;
     int seconds = 0;
     int dummySeconds=0;
     int playableSeconds=0;
     String path = null;
-    LottieAnimationView lavPlaying;
     String recordingPermission = Manifest.permission.RECORD_AUDIO;
     Handler handler;
 
     ExecutorService executorService = Executors.newSingleThreadExecutor();
 
-
-
     @SuppressLint("SetTextI18n")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
+        binding = ActivityMainBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
+
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
         Objects.requireNonNull(getSupportActionBar()).hide();
 
-
-        initView();
-
-        ibRecord.setOnClickListener(view -> {
+        binding.ibRecord.setOnClickListener(view -> {
             if(checkRecordingPermission()) {
                 if (!isRecording) {
-                    tvRecordingPath.setText("Recording...");
+                    binding.tvRecordingPath.setText("Recording...");
                     isRecording=true;
                     executorService.execute(() -> {
                         path = getRecordingFilePath();
@@ -85,12 +76,12 @@ public class MainActivity extends AppCompatActivity {
 
                         mediaRecorder.start();
                         runOnUiThread(() -> {
-                            ivBackground.setVisibility(View.VISIBLE);
-                            lavPlaying.setVisibility(View.GONE);
+                            binding.ivSimpleBg.setVisibility(View.VISIBLE);
+                            binding.lavPlaying.setVisibility(View.GONE);
                             playableSeconds = 0;
                             seconds = 0;
                             dummySeconds = 0;
-                            ibRecord.setImageDrawable(ContextCompat
+                            binding.ibRecord.setImageDrawable(ContextCompat
                                     .getDrawable(MainActivity.this, R.drawable.recording_active));
 
                             runTimer();
@@ -100,7 +91,7 @@ public class MainActivity extends AppCompatActivity {
                      executorService.execute(() -> {
 
                          mediaRecorder.stop();
-                         tvRecordingPath.setText("");
+                         binding.tvRecordingPath.setText("");
                          mediaRecorder.release();
                          mediaRecorder=null;
                          playableSeconds=seconds;
@@ -109,10 +100,10 @@ public class MainActivity extends AppCompatActivity {
                          isRecording = false;
 
                          runOnUiThread(() -> {
-                             ivBackground.setVisibility(View.VISIBLE);
-                             lavPlaying.setVisibility(View.GONE);
+                             binding.ivSimpleBg.setVisibility(View.VISIBLE);
+                             binding.lavPlaying.setVisibility(View.GONE);
                              handler.removeCallbacksAndMessages(null);
-                             ibRecord.setImageDrawable(ContextCompat
+                             binding.ibRecord.setImageDrawable(ContextCompat
                                      .getDrawable(MainActivity.this, R.drawable.recording_in_active));
                          });
                      });
@@ -123,7 +114,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        ibPlay.setOnClickListener(view -> {
+        binding.ibPlay.setOnClickListener(view -> {
             if(!isPlaying)  {
                 if(path!=null) {
                     try {
@@ -141,32 +132,28 @@ public class MainActivity extends AppCompatActivity {
                     e.printStackTrace();
                 }
                 mediaPlayer.start();
-                tvRecordingPath.setText("Playing...");
+                binding.tvRecordingPath.setText("Playing...");
                 isPlaying = true;
-                ibPlay.setImageDrawable(ContextCompat
+                binding.ibPlay.setImageDrawable(ContextCompat
                         .getDrawable(MainActivity.this, R.drawable.recording_pause));
-                ivBackground.setVisibility(View.GONE);
-                lavPlaying.setVisibility(View.VISIBLE);
+                binding.ivSimpleBg.setVisibility(View.GONE);
+                binding.lavPlaying.setVisibility(View.VISIBLE);
                 runTimer();
 
             } else {
                 mediaPlayer.stop();
-                tvRecordingPath.setText(""); 
+                binding.tvRecordingPath.setText("");
                 mediaPlayer.release();
                 mediaPlayer = null;
                 mediaPlayer = new MediaPlayer();
                 isPlaying = false;
                 seconds = 0;
                 handler.removeCallbacksAndMessages(null);
-                ivBackground.setVisibility(View.VISIBLE);
-                lavPlaying.setVisibility(View.GONE);
-                ibPlay.setImageDrawable(ContextCompat
+                binding.ivSimpleBg.setVisibility(View.VISIBLE);
+                binding.lavPlaying.setVisibility(View.GONE);
+                binding.ibPlay.setImageDrawable(ContextCompat
                         .getDrawable(MainActivity.this, R.drawable.recording_play));
             }
-
-
-
-
         });
     }
 
@@ -179,7 +166,7 @@ public class MainActivity extends AppCompatActivity {
                 int minutes = (seconds % 3600) / 60;
                 int secs = seconds % 60;
                 String time = String.format(Locale.getDefault(), "%02d:%02d", minutes, secs);
-                tvRecordingTime.setText(time);
+                binding.tvTime.setText(time);
 
                 if (isRecording || (isPlaying && playableSeconds != -1)) {
                     seconds++;
@@ -193,13 +180,12 @@ public class MainActivity extends AppCompatActivity {
                         playableSeconds = dummySeconds;
                         seconds = 0;
                         handler.removeCallbacksAndMessages(null);
-                        ivBackground.setVisibility(View.VISIBLE);
-                        lavPlaying.setVisibility(View.GONE);
-                        ibPlay.setImageDrawable(ContextCompat.
+                        binding.ivSimpleBg.setVisibility(View.VISIBLE);
+                        binding.lavPlaying.setVisibility(View.GONE);
+                        binding.ibPlay.setImageDrawable(ContextCompat.
                                 getDrawable(MainActivity.this, R.drawable.recording_play));
                         return;
                     }
-
                 }
                 handler.postDelayed(this, 1000);
             }
@@ -214,15 +200,6 @@ public class MainActivity extends AppCompatActivity {
         return file.getPath();
     }
 
-    private void initView() {
-        ibRecord = findViewById(R.id.ib_record);
-        ibPlay = findViewById(R.id.ib_play);
-        tvRecordingTime = findViewById(R.id.tv_time);
-        tvRecordingPath = findViewById(R.id.tv_recording_path);
-        ivBackground = findViewById(R.id.iv_simple_bg);
-        lavPlaying = findViewById(R.id.lav_playing);
-        mediaPlayer = new MediaPlayer();
-    }
 
     private void requestRecordingPermissions() {
         ActivityCompat
@@ -249,7 +226,6 @@ public class MainActivity extends AppCompatActivity {
                 } else {
                     Toast.makeText(this, "Permission denied", Toast.LENGTH_SHORT).show();
                 }
-
             }
         }
     }
