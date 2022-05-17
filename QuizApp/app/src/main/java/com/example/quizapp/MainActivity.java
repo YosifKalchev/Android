@@ -12,5 +12,5 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
     }
 
-    //todo test reformatting with latest tools
+    //todo test reformatting with latest tools!
 }
