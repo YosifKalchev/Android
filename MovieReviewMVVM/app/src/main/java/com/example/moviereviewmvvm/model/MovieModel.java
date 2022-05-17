@@ -1,6 +1,6 @@
 package com.example.moviereviewmvvm.model;
 
-public class MovieModel {
+public class MovieMemeModel {
 
     //todo create the appropriate API model for the new API
 
@@ -8,7 +8,7 @@ public class MovieModel {
     private String url;
 
 
-    public MovieModel(String name, String url) {
+    public MovieMemeModel(String name, String url) {
         this.name = name;
         this.url = url;
     }
@@ -25,7 +25,5 @@ public class MovieModel {
         return url;
     }
 
-    public void setUrl(String url) {
-        this.url = url;
-    }
+
 }
