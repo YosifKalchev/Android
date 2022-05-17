@@ -1,29 +1,13 @@
 package com.example.moviereviewmvvm.model;
 
-public class MovieMemeModel {
+public class MovieModel {
 
     //todo create the appropriate API model for the new API
 
-    private String name;
-    private String url;
+    boolean success;
+    public MemeModel[] data;
 
-
-    public MovieMemeModel(String name, String url) {
-        this.name = name;
-        this.url = url;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getUrl() {
-        return url;
-    }
-
-
+//    public MemeModel[] getData() {
+//        return data;
+//    }
 }
